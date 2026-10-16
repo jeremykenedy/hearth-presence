@@ -32,6 +32,9 @@ void main(){
  vec2 q=abs(p)-box;
  float edge=max(q.x,q.y);
  float flicker=.91+.045*sin(time*2.7)+.035*sin(time*5.3)+.015*sin(time*11.);
+ vec3 fireGlow=vec3(1.,.36,.09);
+ if(hue>1.5 && hue<2.5)fireGlow=vec3(.12,.4,1.);
+ if(hue>2.5)fireGlow=vec3(.65,.2,1.);
  vec3 color;
  if(edge<0. || frameless>.5){
    vec2 f=(p/box+1.)*.5;
@@ -46,11 +49,11 @@ void main(){
    if(linear>.5 && f.y>.205)f.y=.205+(f.y-.205)/flameScale;
    vec4 coord=videoMatrix*vec4(f.x,f.y,0,1);
    color=f.y>1.?vec3(0.):texture2D(fire,coord.xy).rgb;
-   float lum=dot(color,vec3(.299,.587,.114));
-   float hot=smoothstep(.18,.7,lum);
-   if(hue>.5 && hue<1.5)color=mix(color,vec3(lum*1.2,lum*.69,lum*.22),hot*.75);
-   if(hue>1.5 && hue<2.5)color=mix(color,vec3(lum*.18,lum*.61,lum*1.25),hot*.9);
-   if(hue>2.5)color=mix(color,vec3(lum*.8,lum*.28,lum*1.25),hot*.9);
+   // Remap recorded color channels so bright cores and soft edges retain detail.
+   float warm=smoothstep(.015,.12,color.r-color.b);
+   if(hue>.5 && hue<1.5)color=mix(color,color*vec3(1.06,.88,.7),warm);
+   if(hue>1.5 && hue<2.5)color=mix(color,color.bgr*vec3(.85,1.,1.08),warm);
+   if(hue>2.5)color=mix(color,vec3(color.r*.85,color.b*.8,color.g*1.12),warm);
    color*=mix(.68,1.1,light);
    // The reveal casts a soft shadow into the firebox.
    if(frameless<.5)color*=smoothstep(0.,.045,-edge);
@@ -100,10 +103,10 @@ void main(){
    else if(inner<.09)stone*=1.16;
    float room=.33+light*.6;
    float spill=exp(-length(max(q,vec2(0.)))*3.3)*.30*flicker;
-   color=stone*room+stone*vec3(1.,.36,.09)*spill*(.6+.4*max(0.,dot(normal,toFire)));
+   color=stone*room+stone*fireGlow*spill*(.6+.4*max(0.,dot(normal,toFire)));
    // The hearth slab catches the fire along its upper edge.
    if(p.y< -box.y-.12 && p.y> -box.y-.20){
-     color*=1.12; color+=vec3(.08,.026,.006)*flicker*exp(-abs(p.x)*.9);
+     color*=1.12; color+=fireGlow*vec3(.08,.072222,.066667)*flicker*exp(-abs(p.x)*.9);
    }
  }
  float vignette=1.-.14*pow(length((uv-.5)*1.25),2.);

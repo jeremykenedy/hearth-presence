@@ -66,10 +66,13 @@ persistence, sleep/wake and sustained thermal checks remain release gates.
 
 ## Development candidate
 
-The repository contains development source while the modern linear gas asset
-is being replaced with an original simulated burner. The existing linear clip
-is a rejected interim crop and must not be presented as the finished modern
-fireplace. No public APK release has been published from this candidate.
+The current modern linear candidate uses recorded flame emission from the
+credited CC BY 3.0 wood source over an original rendered steel burner and glass
+bed. It replaces the rejected crop of traditional gas hardware. It is a
+composite depiction, not a photographed gas burner or a fluid simulation.
+A 19-second, 30 fps source loop has been built; final native moving review and
+height, burn speed, frame and lifecycle verification remain release gates.
+No public APK release has been published from this candidate.
 
 The current API34 build exposes Modern linear gas in the remote Fire type list.
 D-pad Down/Select selected it; the provider returned `fuel=linear` before and
@@ -77,3 +80,32 @@ after force-stop. Wood was restored afterward. A native DreamService preview
 was bound through IDreamManager.testDream, rendered visible wood for the
 settling interval and exited on Back. The original Aquarium Live selection
 and enabled=1 remained intact. `art/screenshots/dream-wood.png` records that run.
+
+## Modern linear native candidate
+
+On October 15, 2026, the 19-second composite ran on Google TV API 34 emulator
+5580 at 1920x1080. Small, medium and large captures retain the same frame and
+burner bed while changing flame height. Frameless slow playback and a wide
+white frame were also captured. The native screen recording contains 764
+captured compositor frames over 22.544 seconds, spanning a source-loop join;
+this is recording evidence, not an independent renderer frame-rate benchmark.
+
+A current DreamService test bound HearthDreamService and rendered the modern
+linear scene. Back exited it. Hearth defaults were restored afterward. The
+shared emulator's Reel Atrium dream selection and enabled=1 were unchanged;
+no physical TV state was changed during this emulator check. The initial blue
+color capture exposed flattened highlights. A final native retest confirmed
+channel-preserving blue and violet with soft edges, bright cores and matching
+surround reflections. Current scene and settings screenshots were refreshed
+from that corrected build. Physical modern-scene playback and
+vendor idle/sleep/wake behavior remain separate release gates.
+
+The corrected native capture build was
+`fcc20d8628d562a07ea9a50365e9a08704c28689cecf115a5544e0782589d174`.
+The subsequent candidate embeds the refreshed default thumbnail and keeps the
+same renderer and media. Its SHA-256 is `f135d8cc5a2cff2b2fadd08fbbf208e85f4d4dc57fa6e862a45c38eafeb94aa0`
+and its APK size is 69,003,113 bytes. The embedded JPEG was checked byte-for-byte
+against the refreshed preview source. This is a development artifact, not a
+published release pin. Native output evidence is 1920x1080 captures; the modern
+source is 1920x540 at 30 fps. Independent GL swap timings, native 4K composition,
+long-term power and thermal behavior were not established.

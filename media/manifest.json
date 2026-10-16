@@ -6,13 +6,13 @@
   },
   {
     "file": "res/raw/gas.mp4",
-    "sha256": "cc1fddcbc9d8a5e68fc3164ee7f6ab22571c83a746788883660cb0416d136d74",
-    "bytes": 31547265
+    "sha256": "af6251f053ea032ae2898eafb0ed0bd32c3fe119c9e7961a1aa0178ef50c119f",
+    "bytes": 28114870
   },
   {
     "file": "res/raw/linear.mp4",
-    "sha256": "b4e40d22ef89199bf244314f81f66394c23124d6dea97544b962cc24ec5d5f5e",
-    "bytes": 18893731
+    "sha256": "4c4f439cefc34ddc98f67ff0df82b4df209658bf9bf36c07dcbb88e24c796109",
+    "bytes": 12534830
   },
   {
     "file": "res/raw/wood.mp4",

@@ -7,7 +7,7 @@ Settings persist locally. Restart the preview or dream to apply changes.
 | Setting | Default | Choices |
 |---|---|---|
 | Surround | Brick | Brick, white plaster, classic timber, slate, marble, frameless, random |
-| Fire type | Wood | Real wood fire, traditional gas footage, modern linear gas render, random |
+| Fire type | Wood | Real wood fire, traditional gas footage, modern linear burner composite, random |
 | Linear gas flame height | Medium | Small (0.65x), medium (1x), large (1.3x), random; enabled for modern linear gas |
 | Frame width | Standard | Thin, standard, wide, random |
 | Burn speed | Natural | Slow (0.75x), natural (1x), lively (1.25x), random |
@@ -31,10 +31,13 @@ It is flame presentation scaling, not a physical gas-valve simulation.
 Blue and violet are artistic grading of actual footage, not physically simulated combustion.
 Ash is a separate sparse animated layer. Crackle is original synthesized audio,
 independent of recorded flame events. Gas footage includes a real safety mesh.
-Linear gas uses a dedicated 3840x1080 crop of the true gas source, encoded 1920x540
-and shown in a matching 32:9 opening. Combine it with Slate for a sleek modern
-fireplace. Standard gas retains the taller firebox. Neither mode stretches a
-wood fire or creates a gas effect through blue coloring.
+The modern linear scene uses isolated recorded flame emission over an original
+steel burner and glass bed, encoded 1920x540 and shown in a matching 32:9 opening.
+Its recorded flame source is wood combustion; no photographed logs or mesh
+appear in the composite. Combine it with Slate for a modern fireplace.
+Traditional gas retains the taller recorded firebox and visible safety mesh.
+Color options remap the recorded channels while preserving bright cores and
+soft edges. They do not change the fuel or simulate combustion.
 Drift shifts the complete fireplace slowly. This reduces stationary edges but
 cannot guarantee protection from burn-in; keep TV brightness appropriate.
 

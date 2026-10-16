@@ -12,8 +12,10 @@ GL thread before pausing the surface. Starting creates fresh decoder and GL
 resources. There are no background services, wake locks or runtime dependencies.
 
 The default wood source and encoded video are genuine 1920x1080. The gas
-source is 3840x2160. Standard gas crops to 3840x1780 and encodes 1280x594;
-linear gas crops to 3840x1080 and encodes 1920x540 for a true 32:9 opening.
+source is 3840x2160. Standard gas crops to 3840x1780 and encodes 1920x890 at 30 fps (H.264 High Level 4.0);
+The modern linear scene composites isolated recorded flame emission over an original
+rendered burner bed at 1920x540 for a 32:9 opening. Its source footage is wood
+combustion; it does not contain photographed gas hardware or a cropped log pile.
 PlaybackParams controls burn speed and preserves audio pitch. Frameless covers
 the display using aspect-preserving center cropping when needed. Neither asset nor
 emulator establishes native 4K output. The wood adaptation is CC BY 3.0 and the

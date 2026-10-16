@@ -12,9 +12,14 @@ Adapted by slight desaturation, H.264 transcoding and loop-boundary blending.
 Bundled gas footage: Fireplace 1 2021-02-14.webm by FASTILY (2021), CC BY-SA 4.0.
 https://commons.wikimedia.org/wiki/File:Fireplace_1_2021-02-14.webm
 https://creativecommons.org/licenses/by-sa/4.0/
-Adapted into standard and linear gas clips by cropping, scaling, noise reduction
+Adapted into the traditional gas clip by cropping, scaling, noise reduction
 and transcoding.
 The gas video adaptation and displayed composites containing it remain CC BY-SA 4.0.
+The modern linear scene combines isolated flame emission from the wood source
+above (CC BY 3.0) with an original rendered black-steel burner and glass bed
+(Apache-2.0). Changes include temporal background subtraction, removal of fuel
+and room pixels, independent time offsets, additive compositing and loop blending.
+It depicts a modern burner; its recorded flame source is wood combustion.
 Original authors do not endorse this application.
 
 Material diffuse and normal maps from Poly Haven, CC0-1.0:

@@ -8,8 +8,8 @@ The 156 MB original gas source is not committed; its source page links the origi
 | Asset | Author | Source | License | Changes |
 |---|---|---|---|---|
 | wood.mp4 | free video library | [Commons source](https://commons.wikimedia.org/wiki/File:Fantastic-fireplace-fire-chimney-hearth-_background_-_texture_-_motion_graphics_-_free_video_library.webm) | CC BY 3.0 | Original 1920x1080, slight desaturation, H.264, blend loop boundary |
-| gas.mp4 | FASTILY | [Commons source](https://commons.wikimedia.org/wiki/File:Fireplace_1_2021-02-14.webm) | CC BY-SA 4.0 | Original 3840x2160, crop 3840x1780 at 0,380, encode 1280x594, denoise, H.264 |
-| linear.mp4 | FASTILY | Same gas source | CC BY-SA 4.0 | Crop 3840x1080 at 0,1080, encode 1920x540, denoise, H.264 |
+| gas.mp4 | FASTILY | [Commons source](https://commons.wikimedia.org/wiki/File:Fireplace_1_2021-02-14.webm) | CC BY-SA 4.0 | Original 3840x2160, crop 3840x1780 at 0,380, encode 1920x890 at 30 fps, denoise, H.264 High Level 4.0 |
+| linear.mp4 | free video library and Jeremy Kenedy | Same wood source; original rendered burner bed | CC BY 3.0 footage; Apache-2.0 original bed | Isolated recorded flame emission, four independent source offsets, additive compositing, 19-second loop with one-second boundary blend, 1920x540 at 30 fps, H.264 High Level 4.0 |
 | crackle.m4a | Original | scripts/generate-crackle.py | Apache-2.0 | Synthesis, AAC encoding |
 
 The wood source was verified through its Commons source license record,
@@ -26,3 +26,32 @@ OpenGL normal maps are bundled unchanged. Exact source URLs and SHA-256 hashes
 are in assets/materials/provenance.json. License: https://polyhaven.com/license
 
 No Pexels or Pixabay media is bundled.
+
+## Modern linear scene
+
+The wide burner scene combines actual moving flame emission with an original
+black-steel tray and small glass bed. The recorded combustion source is the
+credited wood video. No photographed logs, safety mesh or traditional gas
+hardware appear in this scene. The resulting flame footage retains CC BY 3.0
+attribution; the original burner bed and renderer source are Apache-2.0.
+
+The render pipeline removes the static room estimate in linear light and
+retains recorded flame color. Four independently timed source bands use broad
+overlap and feathering. A one-second blend joins the end to the opening, making
+a 19-second loop from 20 seconds of motion. This is compositing, not a claim of
+new footage captured from a real gas appliance.
+
+The checked-in burner plate is `render/linear-gas/burner-bed.png`. Its Blender
+4.5 LTS scene recipe is `render/linear-gas/create_scene.py`; it renders only the
+bed and does not perform a fluid simulation. Rebuild the moving composite with:
+
+```sh
+python3 -m venv build/render-venv
+build/render-venv/bin/pip install -r render/linear-gas/requirements.txt
+build/render-venv/bin/python render/linear-gas/composite.py
+```
+
+FFmpeg must be on PATH. These are development rendering tools, not Android
+runtime dependencies. Output remains under `build/linear-composite.mp4` until
+moving review and native checks pass. Asset hashes in `media/manifest.json`
+identify the exact clips bundled in the application.

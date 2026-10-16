@@ -30,8 +30,8 @@
 - [License](#license)
 
 The source is available while the first release completes native verification.
-The modern linear gas clip is being replaced with an original burner render;
-its interim crop is not an accepted modern fireplace. See the
+The modern linear scene combines recorded flame emission with an original
+steel burner and glass bed. Final physical TV verification remains pending. See the
 [verification record](docs/VERIFICATION.md) for completed checks and release gates.
 
 ## Requirements
@@ -60,11 +60,11 @@ in the platform screensaver settings or through Fire TV Toolkit for idle use.
 
 ## Features
 
-- Genuine moving wood, gas and wide linear gas fire, bundled for offline playback.
+- Moving wood and traditional gas footage, plus a modern wide burner composite, bundled for offline playback.
 - Brick, white plaster, classic timber, modern slate and marble surrounds, plus full-bleed Frameless.
 - Grain, joints, layered metal reveals and warm flickering light on the surround.
 - Natural, amber, blue and violet flame grading.
-- Thin/standard/wide frames, adjustable burn speed, room lighting, optional drifting ash and crackle sound.
+- Thin/standard/wide frames, small/medium/large modern flame height, adjustable burn speed, room lighting, ash and crackle sound.
 - Slow camera drift and random choices for supported settings.
 - Native DreamService with a remote-friendly settings screen and host settings provider.
 
@@ -77,10 +77,12 @@ lighting. Ash is subtle, sound is off and protective drift is on.
 [Configuration](docs/CONFIGURATION.md) lists every choice and the host contract.
 Frame width changes the material band and metal reveal. Frameless removes both.
 Burn speed offers 0.75x, 1x and 1.25x playback with pitch preserved. Linear gas
-uses its own matching 32:9 source crop. Color grades the recorded flame.
-Ash is a separate visual effect; crackle is synthesized, not recorded flame audio.
-The gas footage includes a real safety mesh. These are video-based fires,
-so controls do not independently simulate fuel, combustion or individual flames.
+uses a 32:9 composite of isolated recorded flame emission over an original burner.
+Its flame-height control scales the flame region above the fixed bed; recorded wood
+and traditional gas do not offer independent flame resizing. Color grades the recorded
+flame. Ash is a separate visual effect; crackle is synthesized. Traditional gas footage
+includes a real safety mesh. The modern composite uses credited wood-combustion
+emission and contains no photographed logs or mesh. See [media provenance](docs/MEDIA.md).
 
 ## Fire TV Toolkit
 
@@ -93,7 +95,6 @@ cd fire-tv-toolkit
 node setup.js
 firetv-screensavers --install=hearth-presence
 screensaver --set=hearth-presence
-firetv-screensavers --install=hearth-presence
 firetv-screensavers --uninstall=hearth-presence --force
 ```
 
@@ -104,7 +105,7 @@ are documented by that project. It does not provide an arbitrary GitHub installe
 
 ## Privacy
 
-No ads, no analytics, no tracking and no app network access. Both fire clips and
+No ads, no analytics, no tracking and no app network access. All fire clips and
 sound are bundled. The manifest requests no permissions and there are no runtime
 application dependencies. The user-run installer contacts GitHub for release files.
 See [architecture](docs/ARCHITECTURE.md) for the verification boundary.
@@ -140,7 +141,7 @@ the host coverage boundary. See [building](docs/BUILDING.md) and [verification](
 
 Captured from the running native application. Footage attribution is in [NOTICE](NOTICE).
 
-<table><tr><td><img src="art/screenshots/brick-wood.png" alt="Real wood fire in a brick surround"></td><td><img src="art/screenshots/slate-gas.png" alt="Gas fire in a modern slate surround"></td><td><img src="art/screenshots/settings.png" alt="Remote-friendly fireplace settings"></td></tr><tr><td><img src="art/screenshots/white-wood.png" alt="Wood fire with a light plaster surround"></td><td><img src="art/screenshots/classic-wood.png" alt="Classic timber fireplace with molding and columns"></td><td><img src="art/screenshots/marble-wood.png" alt="Wood fire in a veined marble surround"></td></tr></table>
+<table><tr><td><img src="art/screenshots/brick-wood.png" alt="Recorded wood fire in a brick surround"></td><td><img src="art/screenshots/modern-linear-medium.png" alt="Modern wide burner with recorded flame emission and a slate surround"></td><td><img src="art/screenshots/settings-modern-linear.png" alt="Remote settings with modern linear flame height enabled"></td></tr><tr><td><img src="art/screenshots/white-wood.png" alt="Wood fire with a light plaster surround"></td><td><img src="art/screenshots/classic-wood.png" alt="Classic timber fireplace with molding and columns"></td><td><img src="art/screenshots/marble-wood.png" alt="Wood fire in a veined marble surround"></td></tr><tr><td><img src="art/screenshots/modern-linear-small.png" alt="Small modern flames above the unchanged burner bed"></td><td><img src="art/screenshots/modern-linear-large.png" alt="Large modern flames above the unchanged burner bed"></td><td><img src="art/screenshots/modern-linear-frameless-slow.png" alt="Modern fire filling the display without a surround"></td></tr><tr><td><img src="art/screenshots/modern-linear-white-wide-blue.png" alt="Blue flame grading retaining bright cores and translucent edges"></td><td><img src="art/screenshots/modern-linear-white-violet.png" alt="Violet flame grading with matching surround reflections"></td><td><img src="art/screenshots/settings-effects.png" alt="Burn speed, color, ash, sound and drift controls"></td></tr></table>
 
 ## License
 
