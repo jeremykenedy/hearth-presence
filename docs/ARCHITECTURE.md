@@ -1,0 +1,29 @@
+# Architecture
+
+A native Android DreamService owns an OpenGL ES 2 surface. MediaPlayer decodes
+bundled H.264 wood or gas footage into an external OES texture. The fragment
+shader places that moving fire inside a layered metal reveal and a material
+surround spanning the screen. Photographed brick courses, joints, plaster grain,
+marble veins and timber grain are shaded with warm fluctuating spill light.
+A tiny optional drift moves the entire fireplace. No image slideshow is used.
+
+Dream stop and preview pause release video, sound and SurfaceTexture on the
+GL thread before pausing the surface. Starting creates fresh decoder and GL
+resources. There are no background services, wake locks or runtime dependencies.
+
+The default wood source and encoded video are genuine 1920x1080. The gas
+source is 3840x2160. Standard gas crops to 3840x1780 and encodes 1280x594;
+linear gas crops to 3840x1080 and encodes 1920x540 for a true 32:9 opening.
+PlaybackParams controls burn speed and preserves audio pitch. Frameless covers
+the display using aspect-preserving center cropping when needed. Neither asset nor
+emulator establishes native 4K output. The wood adaptation is CC BY 3.0 and the
+gas adaptation is CC BY-SA 4.0; application code is Apache-2.0. See NOTICE.
+
+The app requests no permissions, includes no networking library and performs
+no runtime downloads, analytics, crash reporting or tracking. The installer
+alone contacts GitHub when explicitly run by the user.
+
+Material textures are photographed Poly Haven assets under CC0-1.0: red_brick,
+white_plaster_02, wood_floor, slate_floor and marble_01. Original 1K diffuse
+and OpenGL normal maps are bundled unchanged. Exact source URLs and SHA-256
+are in assets/materials/provenance.json. License: https://polyhaven.com/license

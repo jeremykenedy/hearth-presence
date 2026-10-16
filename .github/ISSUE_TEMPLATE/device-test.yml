@@ -1,0 +1,9 @@
+name: Device test result
+description: Report native TV behavior and compatibility evidence.
+body:
+  - type: textarea
+    attributes:
+      label: Device and result
+      description: Include model, OS/API, resolution, app version, playback, remote exit, idle activation, sleep and wake results.
+    validations:
+      required: true

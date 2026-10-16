@@ -1,0 +1,22 @@
+[
+  {
+    "file": "res/raw/crackle.m4a",
+    "sha256": "ec3983772ad646d00993ab99ba7ab7dc46506bc1965e3bd0f4e110bad7e6a235",
+    "bytes": 344105
+  },
+  {
+    "file": "res/raw/gas.mp4",
+    "sha256": "cc1fddcbc9d8a5e68fc3164ee7f6ab22571c83a746788883660cb0416d136d74",
+    "bytes": 31547265
+  },
+  {
+    "file": "res/raw/linear.mp4",
+    "sha256": "b4e40d22ef89199bf244314f81f66394c23124d6dea97544b962cc24ec5d5f5e",
+    "bytes": 18893731
+  },
+  {
+    "file": "res/raw/wood.mp4",
+    "sha256": "0846651541a35df5d91c7c763536dd517bbdca22b5cac921e2bb04682152dfcb",
+    "bytes": 21862491
+  }
+]
