@@ -109,3 +109,16 @@ against the refreshed preview source. This is a development artifact, not a
 published release pin. Native output evidence is 1920x1080 captures; the modern
 source is 1920x540 at 30 fps. Independent GL swap timings, native 4K composition,
 long-term power and thermal behavior were not established.
+
+## Offline credits followup
+
+The signed candidate with SHA-256
+`96067a79be86a0f29f034ee4bcc647e9da7195978b690a7d982f28a17b78278f`
+(69,011,424 bytes) was installed on shared Google TV API 34 emulator 5580.
+D-pad navigation reached the final Credits and licenses button, Select opened
+the native dialog, and Up/Down scrolled from source attribution into the full
+application license. Back closed the dialog. Both current captures are in
+`art/screenshots/credits.png` and `credits-scrolled.png`. The APK contains
+byte-identical root NOTICE and LICENSE files under assets. Existing visual
+preferences and the selected Reel Atrium dream remained unchanged. This adds
+no physical-device verification; the release gate above remains pending.

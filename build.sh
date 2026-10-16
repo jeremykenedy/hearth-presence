@@ -18,7 +18,7 @@ done
   echo "Install Android SDK platform 36 and build-tools 36.0.0." >&2; exit 1;
 }
 mkdir -p "$OUT" "$(dirname "$KEYSTORE")"
-rm -rf "$OUT/classes" "$OUT/dex" "$OUT/generated"
+rm -rf "$OUT/classes" "$OUT/dex" "$OUT/generated" "$OUT/assets"
 mkdir -p "$OUT/classes" "$OUT/dex"
 
 if [[ ! -f "$KEYSTORE" ]]; then
@@ -30,11 +30,14 @@ if [[ ! -f "$KEYSTORE" ]]; then
 fi
 [[ -s "$KEYPASS" ]] || { echo "Restore the signing-key password file." >&2; exit 1; }
 
+mkdir -p "$OUT/assets"
+cp -R "$ROOT/assets/." "$OUT/assets/"
+cp "$ROOT/NOTICE" "$ROOT/LICENSE" "$OUT/assets/"
 "$TOOLS/aapt2" compile --dir "$ROOT/res" -o "$OUT/res.zip"
 "$TOOLS/aapt2" link -o "$OUT/unsigned.apk" -I "$ANDROID_JAR" \
   --manifest "$ROOT/AndroidManifest.xml" --min-sdk-version 23 --target-sdk-version 36 \
   --version-code "$VERSION_CODE" --version-name "$VERSION_NAME" \
-  -A "$ROOT/assets" --java "$OUT/generated" "$OUT/res.zip"
+  -A "$OUT/assets" --java "$OUT/generated" "$OUT/res.zip"
 find "$ROOT/src" "$OUT/generated" -name '*.java' > "$OUT/sources.txt"
 javac -nowarn --release 8 -classpath "$ANDROID_JAR" \
   -d "$OUT/classes" @"$OUT/sources.txt"

@@ -41,6 +41,10 @@ soft edges. They do not change the fuel or simulate combustion.
 Drift shifts the complete fireplace slowly. This reduces stationary edges but
 cannot guarantee protection from burn-in; keep TV brightness appropriate.
 
+## Credits and licenses
+
+The final button in settings opens bundled source credits and the full application license. The text remains available offline and can be scrolled with the TV remote. It adds no visual preference or network request.
+
 ## Host settings contract
 
 Read `content://com.jeremykenedy.hearthpresence.settings/schema` for the

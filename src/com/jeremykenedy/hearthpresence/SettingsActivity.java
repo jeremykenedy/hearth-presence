@@ -89,6 +89,10 @@ public final class SettingsActivity extends Activity {
           });
       content.addView(spinner);
     }
+    Button credits = new Button(this);
+    credits.setText("Credits and licenses");
+    credits.setOnClickListener(view -> CreditsDialog.show(this));
+    content.addView(credits);
     setContentView(scroll);
     preview.requestFocus();
   }
