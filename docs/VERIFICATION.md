@@ -1,124 +1,41 @@
 # Verification
 
+## Final 1.0.0 artifact
+
+The production-signed APK is `hearth-presence.apk`, version 1.0.0/code 1, 69,011,424 bytes, SHA-256 `96067a79be86a0f29f034ee4bcc647e9da7195978b690a7d982f28a17b78278f`. Its production signing certificate SHA-256 is `91128471b54e0c2cc28cb0400ebb5bd8e2b7f2509ba0b6d5ed0507f59752d5cf`. CI review APKs use ephemeral signers and must not replace this update-compatible production artifact.
+
 ## Device matrix
 
-| Device | Type | OS/API | Resolution | Result |
-|---|---|---|---|---|
-| Google TV emulator aql-googletv34 | Emulator | Android 14/API 34 | 1920x1080 | Real 1080 wood/gas playback, material modes, settings provider and remote Menu/Back tested |
-| AFTDEC012E | Physical Fire TV | Fire OS/API 30 | 1920x1080 capture | Wood preview, wide frame and frameless slow playback captured; final modern gas and idle activation pending |
-| Android TV | Other physical models | Untested | Untested | Volunteer needed |
-| Google TV | Physical | Untested | Untested | Volunteer needed |
+| Device | Type | OS/API | Observed output | Result |
+| --- | --- | --- | --- | --- |
+| Google TV emulator, shared 5580 | Emulator | Android 14/API 34 | 1920x1080 | Recorded wood/gas and modern linear playback, material/frame/height/color controls, provider, remote credits and bound test-Dream with Back checked |
+| Amazon AFTDEC012E | Physical Fire TV | Android API 30; Fire OS build not refreshed | 1920x1080 capture | Final signed APK update, remote Settings to Preview and Back, modern linear playback, frameless blue slow/small actual test-Dream and Back checked |
+| Other physical Android TV and Google TV models | Physical | Untested | Untested | Not established by these checks |
 
-If you have an untested TV, please test and report your model, OS/API, resolution,
-remote navigation, dream activation, sustained playback, exit and sleep/wake
-results through this repository's issue tracker. Emulator results do not establish
-vendor idle startup, sustained thermal behavior or native 4K composition.
+## Final physical Fire TV run
 
-## Host checks
+On October 16, 2026, the exact final production APK was installed in place on AFTDEC012E. The ten existing stored preferences survived the update. The newly supported `flame_size` resolved to its `medium` default. Subsequent checks restored all eleven post-update values exactly.
 
-- Signed APK builds with SDK36, minSdk23 and targetSdk36.
-- SettingsValues host Java tests enforce 100% line and branch coverage.
-- Installer tests enforce 100% Python line and branch coverage.
-- Style uses Google Java Format through Spotless.
-- Manifest/source privacy checks and media/XML/SVG validation run locally and in CI.
-- App has no permission requests or application runtime dependencies.
+The remote operated Settings, Open fireplace, Preview and Back to Settings. The modern linear scene ran in a slate surround with large flames, bright lighting, lively ash and crackle enabled. The actual native recording lasts 19.741 seconds. A SurfaceFlinger latency sample contains 126 valid presents across 3.7167 seconds, approximately 33.63 buffer presents per second. This short presentation sample is not decoded-video FPS, a sustained renderer benchmark, an acoustic test or a thermal guarantee. The modern source video is 1920x540 at 30 fps.
 
-## Screenshot provenance
+A separate run used frameless blue grading, small flames and slow playback through the actual HearthDreamService. Dream-manager output identified the service, `mCurrentDreamIsTest=true` and `mBound=true`; Back cleared the bound dream. This explicit test exercises the real service rather than only launching an activity. It does not establish automatic idle startup across vendor configurations.
 
-Images in art/screenshots are unretouched ADB captures from the running app on
-Google TV API 34, 1920x1080, October 15 2026. Each filename describes its mode.
-The in-app preview is a resized version of the verified default screenshot.
-Wood footage is CC BY 3.0 and traditional gas footage is CC BY-SA 4.0; see NOTICE and MEDIA.md.
+The selected Aquarium Dream, screensaver enabled state, sleep timeout, screen-off timeout and auto-wake setting were unchanged. All eleven app preferences matched the post-update baseline after restoration, and the device returned to its original asleep state. No physical TV commands were issued by the documentation worker; these results come from the coordinated device run.
 
-## Native evidence
+The unretouched physical captures are [`fire-tv-modern-linear.png`](../art/screenshots/fire-tv-modern-linear.png) and [`fire-tv-frameless-blue-dream.png`](../art/screenshots/fire-tv-frameless-blue-dream.png). Their exact timestamps, artifact hash, routes and dimensions are in [`physical-provenance.json`](../art/screenshots/physical-provenance.json). Independent native QuickTime review played the final physical recording from start to end and replayed the middle through the end. Flames changed continuously within the correct slate frame and reflected lighting, with no empty or missing fire observed. The separate frameless blue actual-Dream capture was also inspected.
 
-A 34.9 second native screen recording contains 1784 compositor frames at 1920x1080,
-covering the entire 29.25 second wood loop without a blank transition in inspected
-samples. This is not an independent flame-rate benchmark; source footage is 30 fps.
-The scene uses actual decoded footage, not a still fire with camera motion.
-After sustained emulator playback, dumpsys meminfo reported 24,514 KB total PSS.
-This is one emulator sample, not a hardware memory or power guarantee.
-D-pad/Select changed the surround from Brick to White and the provider confirmed
-persistence. Invalid provider values were rejected. Menu and Back exited preview.
+## Emulator controls and moving evidence
 
-## Scope
+The current modern scene uses isolated recorded wood flame emission over an original steel burner and glass bed. It replaces the rejected traditional-gas crop and is a composite depiction rather than a photographed gas burner or fluid simulation. Its 19-second source loop ran on Google TV API 34 at 1920x1080. Small, medium and large flame heights retain the same frame and burner bed. Frameless slow playback, a wide white frame, blue and violet grading and matching reflections were checked on the native surface.
 
-No reboot, platform update blocking, sleep timer modification or physical TV
-changes are performed by the standalone installer. Platform-specific settings
-safeguards belong to Fire TV Toolkit. Drift reduces stationary edges but does
-not guarantee prevention of image retention or burn-in. Native4K, long-term
-thermal behavior and all vendor versions require separate device evidence.
+The corrected scene capture build SHA-256 was `fcc20d8628d562a07ea9a50365e9a08704c28689cecf115a5544e0782589d174`. The final production APK retains the same renderer and scene media, embeds the refreshed native preview and adds the offline credits dialog. On that exact final APK, D-pad navigation opened credits, scrolled from source attribution into the full Apache application license, and Back closed the dialog. Packaged NOTICE and LICENSE match the root files byte-for-byte. Existing preferences and the selected Reel Atrium Dream remained unchanged.
 
-## Physical Fire TV evidence
+A 22.544-second modern native recording contains 764 captured compositor frames across a loop boundary. Earlier wood evidence spans the complete 29.25-second source loop. Recording counts support moving review and are not independent renderer frame-rate measurements. The separate source loops contain genuine changing recorded fire; the animation does not consist of a still fire with camera motion.
 
-Wood playback was inspected on AFTDEC012E/API 30. Original physical captures
-include a wide brick frame and frameless wood at 0.75x. A first frameless capture
-was black, so playback was relaunched and the slow mode was captured again with
-visible moving fire. This is a retest result, not a claim that the first attempt
-passed. A 39.4 second recording contains 869 captured frames, approximately
-22 captured frames per second. Screen recording timestamps do not establish
-the uncaptured renderer frame rate. SurfaceFlinger returned no usable timing
-samples. One physical meminfo sample reported 152,058 KB total PSS.
+## Host verification
 
-The original Aquarium screensaver choice and enabled state were preserved.
-Final modern linear gas playback, actual DreamService activation, settings
-persistence, sleep/wake and sustained thermal checks remain release gates.
+The production APK builds with SDK 36, minSdk 23 and targetSdk 36. SettingsValues host tests enforce 100% line and branch coverage, and installer tests separately enforce 100% Python line and branch coverage. Spotless checks actual Java source. Privacy, media hashes, XML/SVG and secret checks run locally and in CI. The app requests no permissions, uses no network client and adds no application runtime dependencies. Framework, decoder, graphics and lifecycle code remain outside host coverage and require native checks.
 
-## Development candidate
+## Limits
 
-The current modern linear candidate uses recorded flame emission from the
-credited CC BY 3.0 wood source over an original rendered steel burner and glass
-bed. It replaces the rejected crop of traditional gas hardware. It is a
-composite depiction, not a photographed gas burner or a fluid simulation.
-A 19-second, 30 fps source loop has been built; final native moving review and
-height, burn speed, frame and lifecycle verification remain release gates.
-No public APK release has been published from this candidate.
-
-The current API34 build exposes Modern linear gas in the remote Fire type list.
-D-pad Down/Select selected it; the provider returned `fuel=linear` before and
-after force-stop. Wood was restored afterward. A native DreamService preview
-was bound through IDreamManager.testDream, rendered visible wood for the
-settling interval and exited on Back. The original Aquarium Live selection
-and enabled=1 remained intact. `art/screenshots/dream-wood.png` records that run.
-
-## Modern linear native candidate
-
-On October 15, 2026, the 19-second composite ran on Google TV API 34 emulator
-5580 at 1920x1080. Small, medium and large captures retain the same frame and
-burner bed while changing flame height. Frameless slow playback and a wide
-white frame were also captured. The native screen recording contains 764
-captured compositor frames over 22.544 seconds, spanning a source-loop join;
-this is recording evidence, not an independent renderer frame-rate benchmark.
-
-A current DreamService test bound HearthDreamService and rendered the modern
-linear scene. Back exited it. Hearth defaults were restored afterward. The
-shared emulator's Reel Atrium dream selection and enabled=1 were unchanged;
-no physical TV state was changed during this emulator check. The initial blue
-color capture exposed flattened highlights. A final native retest confirmed
-channel-preserving blue and violet with soft edges, bright cores and matching
-surround reflections. Current scene and settings screenshots were refreshed
-from that corrected build. Physical modern-scene playback and
-vendor idle/sleep/wake behavior remain separate release gates.
-
-The corrected native capture build was
-`fcc20d8628d562a07ea9a50365e9a08704c28689cecf115a5544e0782589d174`.
-The subsequent candidate embeds the refreshed default thumbnail and keeps the
-same renderer and media. Its SHA-256 is `f135d8cc5a2cff2b2fadd08fbbf208e85f4d4dc57fa6e862a45c38eafeb94aa0`
-and its APK size is 69,003,113 bytes. The embedded JPEG was checked byte-for-byte
-against the refreshed preview source. This is a development artifact, not a
-published release pin. Native output evidence is 1920x1080 captures; the modern
-source is 1920x540 at 30 fps. Independent GL swap timings, native 4K composition,
-long-term power and thermal behavior were not established.
-
-## Offline credits followup
-
-The signed candidate with SHA-256
-`96067a79be86a0f29f034ee4bcc647e9da7195978b690a7d982f28a17b78278f`
-(69,011,424 bytes) was installed on shared Google TV API 34 emulator 5580.
-D-pad navigation reached the final Credits and licenses button, Select opened
-the native dialog, and Up/Down scrolled from source attribution into the full
-application license. Back closed the dialog. Both current captures are in
-`art/screenshots/credits.png` and `credits-scrolled.png`. The APK contains
-byte-identical root NOTICE and LICENSE files under assets. Existing visual
-preferences and the selected Reel Atrium dream remained unchanged. This adds
-no physical-device verification; the release gate above remains pending.
+Automatic idle activation, long-duration decoder/GPU behavior, temperature, power and vendor-specific sleep/wake paths have not been comprehensively measured for this release. Native output evidence is 1920x1080; a 4K panel does not establish native 4K composition. Protective drift reduces stationary edges but does not guarantee prevention of image retention or burn-in. The standalone installer changes no selected dream, timers, sleep behavior or update settings. Physical preservation checks do not establish support for every vendor model or OS version.

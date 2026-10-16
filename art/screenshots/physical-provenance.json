@@ -1,0 +1,26 @@
+[
+  {
+    "file": "art/screenshots/fire-tv-modern-linear.png",
+    "sha256": "7db765d6b3f2735c36dbbb0fe7e819bbd98946d2f1e67b7def0ea7bcc009a80b",
+    "captured_at_utc": "2026-10-16T10:34:10.957044+00:00",
+    "device": "Amazon AFTDEC012E",
+    "api": 30,
+    "surface_width": 1920,
+    "surface_height": 1080,
+    "apk_sha256": "96067a79be86a0f29f034ee4bcc647e9da7195978b690a7d982f28a17b78278f",
+    "preset": "Modern slate, large flames, bright lighting, lively ash and crackle enabled",
+    "native_route": "SettingsActivity remote Open fireplace to PreviewActivity"
+  },
+  {
+    "file": "art/screenshots/fire-tv-frameless-blue-dream.png",
+    "sha256": "172e8fad960d033ed522598f05fae5c30017ee12f3eee7d66e8dcf0ee98e6e07",
+    "captured_at_utc": "2026-10-16T10:35:22.856519+00:00",
+    "device": "Amazon AFTDEC012E",
+    "api": 30,
+    "surface_width": 1920,
+    "surface_height": 1080,
+    "apk_sha256": "96067a79be86a0f29f034ee4bcc647e9da7195978b690a7d982f28a17b78278f",
+    "preset": "Frameless modern linear, blue, small flames and slow playback, actual bound DreamService",
+    "native_route": "HearthDreamService testDream"
+  }
+]
