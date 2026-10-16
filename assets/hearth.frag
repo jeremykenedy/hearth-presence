@@ -16,6 +16,7 @@ uniform float gas;
 uniform float linear;
 uniform float frameless;
 uniform float frameThickness;
+uniform float flameScale;
 uniform vec3 ashParticles[12];
 varying vec2 uv;
 float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
@@ -41,8 +42,10 @@ void main(){
      if(viewAspect>sourceAspect)f.y=(f.y-.5)*sourceAspect/viewAspect+.5;
      else f.x=(f.x-.5)*viewAspect/sourceAspect+.5;
    }
+   // Keep the physical burner bed fixed while changing the flame region above it.
+   if(linear>.5 && f.y>.205)f.y=.205+(f.y-.205)/flameScale;
    vec4 coord=videoMatrix*vec4(f.x,f.y,0,1);
-   color=texture2D(fire,coord.xy).rgb;
+   color=f.y>1.?vec3(0.):texture2D(fire,coord.xy).rgb;
    float lum=dot(color,vec3(.299,.587,.114));
    float hot=smoothstep(.18,.7,lum);
    if(hue>.5 && hue<1.5)color=mix(color,vec3(lum*1.2,lum*.69,lum*.22),hot*.75);

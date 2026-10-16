@@ -135,6 +135,7 @@ public final class HearthSceneView extends GLSurfaceView implements GLSurfaceVie
           "frameless",
           "linear",
           "frameThickness",
+          "flameScale",
           "ashParticles[0]"
         }) {
       uniforms.put(name, GLES20.glGetUniformLocation(program, name));
@@ -267,6 +268,7 @@ public final class HearthSceneView extends GLSurfaceView implements GLSurfaceVie
     uniform("material", choice("surround", "brick", "white", "classic", "slate", "marble"));
     float frame = choice("frame_width", "thin", "standard", "wide");
     uniform("opening", 1.14f - frame * .18f);
+    uniform("flameScale", SettingsValues.flameScale(settings.get("flame_size")));
     uniform("frameThickness", .65f + frame * .35f);
     uniform("frameless", "frameless".equals(settings.get("surround")) ? 1 : 0);
     uniform("linear", "linear".equals(settings.get("fuel")) ? 1 : 0);

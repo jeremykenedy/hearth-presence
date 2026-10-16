@@ -70,3 +70,10 @@ The repository contains development source while the modern linear gas asset
 is being replaced with an original simulated burner. The existing linear clip
 is a rejected interim crop and must not be presented as the finished modern
 fireplace. No public APK release has been published from this candidate.
+
+The current API34 build exposes Modern linear gas in the remote Fire type list.
+D-pad Down/Select selected it; the provider returned `fuel=linear` before and
+after force-stop. Wood was restored afterward. A native DreamService preview
+was bound through IDreamManager.testDream, rendered visible wood for the
+settling interval and exited on Back. The original Aquarium Live selection
+and enabled=1 remained intact. `art/screenshots/dream-wood.png` records that run.

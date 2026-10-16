@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.*;
 
 public final class SettingsActivity extends Activity {
+  private Spinner flameHeight;
+
   private String[] labels(String[] values) {
     String[] labels = new String[values.length];
     for (int i = 0; i < values.length; i++) {
@@ -18,7 +20,7 @@ public final class SettingsActivity extends Activity {
         continue;
       }
       if ("linear".equals(value)) {
-        labels[i] = "Linear gas";
+        labels[i] = "Modern linear gas";
         continue;
       }
       labels[i] =
@@ -64,6 +66,10 @@ public final class SettingsActivity extends Activity {
       Spinner spinner = new Spinner(this);
       spinner.setMinimumHeight(54);
       spinner.setFocusable(true);
+      if ("flame_size".equals(row[0])) {
+        flameHeight = spinner;
+        spinner.setEnabled("linear".equals(prefs.getString("fuel", "wood")));
+      }
       ArrayAdapter<String> adapter =
           new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, labels(values));
       adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -75,6 +81,8 @@ public final class SettingsActivity extends Activity {
           new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
               prefs.edit().putString(row[0], values[position]).apply();
+              if ("fuel".equals(row[0]) && flameHeight != null)
+                flameHeight.setEnabled("linear".equals(values[position]));
             }
 
             public void onNothingSelected(AdapterView<?> parent) {}

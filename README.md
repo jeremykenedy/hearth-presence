@@ -8,6 +8,8 @@
   <a href="https://github.com/jeremykenedy/hearth-presence/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/jeremykenedy/hearth-presence"></a>
   <a href="https://github.com/jeremykenedy/hearth-presence/actions/workflows/tests.yml"><img alt="Tests" src="https://github.com/jeremykenedy/hearth-presence/actions/workflows/tests.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="Apache-2.0" src="https://img.shields.io/badge/License-Apache--2.0-blue"></a>
+</p>
+<p align="center">
   <a href="https://github.com/jeremykenedy"><img alt="Follow" src="https://img.shields.io/github/followers/jeremykenedy?label=Follow"></a>
   <a href="https://github.com/jeremykenedy/hearth-presence/stargazers"><img alt="Star repository" src="https://img.shields.io/github/stars/jeremykenedy/hearth-presence"></a>
   <a href="https://github.com/sponsors/jeremykenedy"><img alt="Sponsor" src="https://img.shields.io/badge/Sponsor-GitHub-pink"></a>
@@ -126,6 +128,7 @@ the host coverage boundary. See [building](docs/BUILDING.md) and [verification](
 - [Building and coverage boundary](docs/BUILDING.md)
 - [Installation, update and removal](docs/INSTALLATION.md)
 - [Configuration and settings contract](docs/CONFIGURATION.md)
+- [Host integration contract](docs/INTEGRATION.md)
 - [Architecture and privacy](docs/ARCHITECTURE.md)
 - [Media provenance and licenses](docs/MEDIA.md)
 - [Device verification](docs/VERIFICATION.md)

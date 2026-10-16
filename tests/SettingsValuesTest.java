@@ -8,6 +8,15 @@ import org.junit.Test;
 
 public class SettingsValuesTest {
   @Test
+  public void flameHeightHasThreeDistinctScalesAndSafeFallback() {
+    assertEquals(.65f, SettingsValues.flameScale("small"), 0f);
+    assertEquals(1.3f, SettingsValues.flameScale("large"), 0f);
+    assertEquals(1f, SettingsValues.flameScale("medium"), 0f);
+    assertEquals(1f, SettingsValues.flameScale(null), 0f);
+    assertEquals(1f, SettingsValues.flameScale("invalid"), 0f);
+  }
+
+  @Test
   public void playbackRatesPreserveNaturalDefaultAndSupportedSpeeds() {
     assertEquals(.75f, SettingsValues.playbackSpeed("slow"), 0f);
     assertEquals(1.25f, SettingsValues.playbackSpeed("lively"), 0f);

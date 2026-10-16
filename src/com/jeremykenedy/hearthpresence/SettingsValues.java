@@ -17,6 +17,7 @@ public final class SettingsValues {
       "random"
     },
     {"fuel", "Fire type", "wood", "wood", "gas", "linear", "random"},
+    {"flame_size", "Linear gas flame height", "medium", "small", "medium", "large", "random"},
     {"frame_width", "Frame width", "standard", "thin", "standard", "wide", "random"},
     {"burn_speed", "Burn speed", "natural", "slow", "natural", "lively", "random"},
     {"color", "Flame color", "natural", "natural", "amber", "blue", "violet", "random"},
@@ -28,6 +29,12 @@ public final class SettingsValues {
   };
 
   private SettingsValues() {}
+
+  public static float flameScale(String value) {
+    if ("small".equals(value)) return .65f;
+    if ("large".equals(value)) return 1.3f;
+    return 1f;
+  }
 
   public static float playbackSpeed(String value) {
     if ("slow".equals(value)) return .75f;
