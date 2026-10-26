@@ -124,6 +124,49 @@ fit without horizontal page overflow. The README's three new previews and
 features table also passed both widths. Temporary viewport changes were reset
 and the owned review tab was closed; no account appearance setting changed.
 
+### Code 6 physical performance foundation and visual hold
+
+The exact code 6 APK was subsequently tested on AFTDEC012E/API 30. Native
+D-pad selection exercised all three wood heights with Preview and Back. The
+frameless large/lively/bright/lively-ash preset measured 54.349 to 58.139 presents
+per second across three short Preview windows. One initial Preview window had
+a 133.531 ms interval; its cause was not isolated. Later Preview maxima were
+33.37 and 34.02 ms.
+
+A normal, non-test Dream remained bound for 300.004 seconds. Three windows at
+each of approximately 40, 150 and 280 seconds measured 57.230 to 57.696 presents
+per second. Each sampled window covered about 2.15 to 2.18 seconds, without
+screen recording. These are compositor presentations, not decoded video FPS
+or continuous full-run timing. The wood source contains 30 frames per second.
+Within those Dream windows the largest intervals were 33.35 to 34.12 ms.
+
+Strict cleanup verified the fresh Hearth, launcher and available surrounding
+provider values, observed system keys, external backup/import bytes and app-op
+modes. The original Aerial selection was explicitly restored, Main was focused
+and Awake, and the working guard state was retained. The legitimate upgrade
+was retained. No audio, CEC, account, reboot or sleep changes were used.
+
+This establishes a performance foundation, not final visual acceptance. Moving
+review identified a bright rectangular bezel edge and overly isolated pale
+flame cores. The next private code 7 candidate replaces that bezel edge with a
+smooth shadow and pre-renders softer orange flame emission while protecting
+the fixed sidewalls. Matched source frames and a complete 29.267-second source
+movie were reviewed, plus a ten-second last-to-first content boundary proof.
+Natural detached bright flame flecks remain. These source checks do not replace
+fresh Android visual, lifecycle and presentation checks of the final candidate.
+The code 6 screenshots remain explicitly tied to code 6, not the new polish.
+
+The frozen code 7 candidate has SHA-256
+`9541eb4fe2f4d7d69ac1f85b38144f5b5926274291ebec796d8150d27e07b781`
+and is 121,223,466 bytes. Its production signing certificate is unchanged.
+Compared with code 6, only the version manifest, bezel shader and two adapted
+wood videos differ. DEX, settings, point-ash shaders, source medium video,
+traditional gas, modern linear, background, materials and audio are identical.
+Both new clips fully decode to 878 frames at 1920x1080/30. Large is byte-identical
+to the complete source proof reviewed in QuickTime. Local build, Java/style,
+installer, privacy, media integrity and artifact checks passed. Exact code 7
+Android visual and physical presentation gates remain pending.
+
 ## Final 1.0.0 artifact
 
 The production-signed APK is `hearth-presence.apk`, version 1.0.0/code 1, 69,011,424 bytes, SHA-256 `96067a79be86a0f29f034ee4bcc647e9da7195978b690a7d982f28a17b78278f`. Its production signing certificate SHA-256 is `91128471b54e0c2cc28cb0400ebb5bd8e2b7f2509ba0b6d5ed0507f59752d5cf`. CI review APKs use ephemeral signers and must not replace this update-compatible production artifact.

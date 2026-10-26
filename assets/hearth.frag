@@ -91,8 +91,7 @@ void main(){
    // Layered firebox reveal, a brushed metal lip and shadowed stone bevel.
    if(linear>.5)inner*=1.8;
    if(inner<.027)stone=vec3(.035,.032,.028)+.07*exp(-abs(inner-.014)*190.);
-   else if(inner<.075)stone*=.43+.47*(inner-.027)/.048;
-   else if(inner<.09)stone*=1.16;
+   else if(inner<.09)stone*=.43+.57*smoothstep(.027,.09,inner);
    float room=.33+light*.6;
    float spill=exp(-length(max(q,vec2(0.)))*3.3)*.30*flicker;
    color=stone*room+stone*fireGlow*spill*(.6+.4*max(0.,dot(normal,toFire)));

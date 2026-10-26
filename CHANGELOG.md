@@ -13,8 +13,9 @@ composite. A new photographed gas source has not passed the quality gate.
 Code 3 passed emulator controls and moving captures. Code 4 passed physical
 height selection and Dream attachment but failed the presentation-rate gate.
 The replacement pre-renders the two discrete 1080p/30 fps height variants and
-draws the same twelve ash particles as additive points. Its native and physical
-quality and performance gates remain pending; this is not a released update.
+draws the same twelve ash particles as additive points. Code 6 passed native controls and a five-minute physical Dream performance
+foundation. Final bezel and flame-body polish still requires a fresh native
+quality gate; this is not a released update.
 
 ## 1.0.0 - 2026-10-16
 

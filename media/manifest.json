@@ -26,12 +26,12 @@
   },
   {
     "file": "res/raw/wood_small.mp4",
-    "sha256": "e4382ad9e6c1754c8c5508fe75b0ba4451dbad8de8759d0f7f575556d6e82f06",
-    "bytes": 19267715
+    "sha256": "dcfc109b6e66c15614c321e5cdf7242c11a84c5fcc44dca44d244e9360a301ce",
+    "bytes": 21842711
   },
   {
     "file": "res/raw/wood_large.mp4",
-    "sha256": "89c880705ac96a42974370c37c204c5de6fc36c57cbbf271d362bf531d021bcb",
-    "bytes": 25895392
+    "sha256": "2ec2828fe07b9486ecfebb34401f2b30989ccc819a8598dc239ce68970131d90",
+    "bytes": 29456356
   }
 ]

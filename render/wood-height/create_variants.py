@@ -25,7 +25,14 @@ for name, scale in [("small", .65), ("large", 1.3)]:
     sampled_background = cv2.remap(background_rgb, xx, sample_y, cv2.INTER_LINEAR,
                                   borderMode=cv2.BORDER_REPLICATE)
     variants[name] = (sample_y, sampled_background ** 2.2)
-fade = np.clip((anchors - yy) / (height * .033333), 0, 1)[:, :, None]
+def smooth(low, high, value):
+    value = np.clip((value - low) / (high - low), 0, 1)
+    return value * value * (3 - 2 * value)
+
+
+# Keep the source sidewalls fixed outside the central flame volume.
+lateral = smooth(.12, .20, xx / width) * (1 - smooth(.80, .90, xx / width))
+fade = (np.clip((anchors - yy) / (height * .033333), 0, 1) * lateral)[:, :, None]
 reader = subprocess.Popen([
     "ffmpeg", "-v", "error", "-threads", "1", "-i", str(root / "res/raw/wood.mp4"),
     "-threads", "1", "-f", "rawvideo", "-pix_fmt", "rgb24", "pipe:1",
@@ -52,12 +59,9 @@ try:
             recorded = cv2.remap(original, xx, sample_y, cv2.INTER_LINEAR,
                                  borderMode=cv2.BORDER_CONSTANT)
             emission = np.maximum(recorded ** 2.2 - sampled_background, 0)
-            gate = np.clip((recorded[:, :, 1] - .08) / .16, 0, 1)
-            gate = gate * gate * (3 - 2 * gate)
-            # Exclude red brick reflections while retaining gold flame emission.
+            # Retain dim orange flame tissue without moving the red brick reflections.
             ratio = recorded[:, :, 1] / np.maximum(recorded[:, :, 0], .01)
-            chroma = np.clip((ratio - .28) / .22, 0, 1)
-            gate *= chroma * chroma * (3 - 2 * chroma)
+            gate = smooth(.025, .18, recorded[:, :, 1]) * smooth(.15, .38, ratio)
             emission *= gate[:, :, None]
             adjusted = np.clip(background_linear + emission, 0, 1) ** (1 / 2.2)
             result = original * (1 - fade) + adjusted * fade
