@@ -1,22 +1,31 @@
 # Native screenshots
 
-## Wood height development candidate
+## Current 1.1.0 physical captures
 
-These current captures come from version 1.1.0/code 7 on the Android TV API 34
-emulator at 1920x1080. They are PreviewActivity captures, not physical-TV or
-DreamService proof. The fixed logs and frame retain their coordinates while the
-recorded flame emission changes height through the pre-rendered variants.
-The code 7 bezel and softer flame-body changes await physical verification.
-Code 6 completed the five-minute physical presentation foundation.
-Exact artifact hashes are in [capture provenance](../art/screenshots/wood-height-provenance.json).
+All nine images show the exact signed version 1.1.0/code 7 APK on
+AFTDEC012E/API 30 at 1920x1080. The frameless capture is from the naturally
+bound, non-test DreamService; the remaining images show Preview or Settings.
+All were visually inspected before inclusion. [Capture hashes and routes](../art/screenshots/physical7-provenance.json)
+identify the current artifact. Small and Large wood variants adapt recorded flame
+emission at 1080p/30 while keeping the logs and walls fixed. Linear fire remains
+a composite depiction, not photographed gas. See [verification](VERIFICATION.md)
+for clean presentation sampling and limitations.
 
-<table><tr><th>Small</th><th>Medium</th><th>Large</th></tr><tr><td><img src="../art/screenshots/wood-height-small-api34.png" alt="Small wood flame emission above unchanged logs"></td><td><img src="../art/screenshots/wood-height-medium-api34.png" alt="Original medium wood footage with unchanged logs"></td><td><img src="../art/screenshots/wood-height-large-api34.png" alt="Large wood flame emission above unchanged logs"></td></tr><tr><td><img src="../art/screenshots/wood-height-settings-api34.png" alt="Native settings with wood flame height enabled"></td><td></td><td></td></tr></table>
+<table><tr><td><img src="../art/screenshots/physical7-wood-small.png" alt="Small wood height on physical Fire TV"><br>Small wood height</td><td><img src="../art/screenshots/physical7-wood-medium.png" alt="Original medium wood fire on physical Fire TV"><br>Original medium wood fire</td><td><img src="../art/screenshots/physical7-wood-large.png" alt="Large wood height on physical Fire TV"><br>Large wood height</td></tr><tr><td><img src="../art/screenshots/physical7-white-frame-thin.png" alt="Thin white frame on physical Fire TV"><br>Thin white frame</td><td><img src="../art/screenshots/physical7-white-frame-wide.png" alt="Wide white frame on physical Fire TV"><br>Wide white frame</td><td><img src="../art/screenshots/physical7-normal-dream-70.png" alt="Frameless Large normal Dream on physical Fire TV"><br>Frameless Large normal Dream</td></tr><tr><td><img src="../art/screenshots/physical7-linear-small-natural.png" alt="Small natural linear composite on physical Fire TV"><br>Small natural linear composite</td><td><img src="../art/screenshots/physical7-linear-large-blue.png" alt="Large blue linear composite on physical Fire TV"><br>Large blue linear composite</td><td><img src="../art/screenshots/physical7-settings-current7.png" alt="Native remote settings on physical Fire TV"><br>Native remote settings</td></tr></table>
+
+## Earlier code 7 emulator evidence
+
+The four API 34 captures remain available in the repository and are tied to
+[their provenance](../art/screenshots/wood-height-provenance.json). Independent
+normal-speed review played the 34.685-second native movie across its source
+period. This does not establish frame-by-frame seam verification or owner
+acceptance.
 
 ## Released 1.0.0 modes
 
-The following captures document the earlier released build. The modern linear,
-surround, frame, grading, ash and sound behavior is unchanged by the wood-height
-work; these images are retained as historical evidence rather than new tests.
+The following captures document the earlier released build and its available
+controls. They are historical evidence, not current code 7 appearance or
+performance tests; the current captures above take precedence.
 
 Captured from the running native application. The first two images show the exact final production APK on a physical AFTDEC012E Fire TV; the third shows its unchanged modern scene through the actual DreamService on API 34. Remaining captures show the verified emulator controls and materials. Footage attribution is in [NOTICE](../NOTICE).
 

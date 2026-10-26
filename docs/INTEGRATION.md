@@ -14,18 +14,18 @@
 | Checksum asset | `hearth-presence.apk.sha256` |
 | Settings schema | `content://com.jeremykenedy.hearthpresence.settings/schema` |
 | Current settings | `content://com.jeremykenedy.hearthpresence.settings/settings` |
-| Preview source | `art/screenshots/brick-wood.png` |
+| Preview source | `art/screenshots/physical7-wood-large.png` |
 | Embedded preview | `res/drawable-nodpi/screensaver_preview.jpg` |
 
-The release contract is `v1.0.0`. Use this exact physically tested production artifact, not an ephemeral CI review build:
+The release contract is `v1.1.0`. Use this exact physically tested production artifact, not an ephemeral CI review build:
 
 | Release field | Value |
 | --- | --- |
-| Version / Android code | `1.0.0` / `1` |
-| APK bytes | `69011424` |
-| APK SHA-256 | `96067a79be86a0f29f034ee4bcc647e9da7195978b690a7d982f28a17b78278f` |
+| Version / Android code | `1.1.0` / `7` |
+| APK bytes | `121223466` |
+| APK SHA-256 | `9541eb4fe2f4d7d69ac1f85b38144f5b5926274291ebec796d8150d27e07b781` |
 | Signing certificate SHA-256 | `91128471b54e0c2cc28cb0400ebb5bd8e2b7f2509ba0b6d5ed0507f59752d5cf` |
-| Intended tag | `v1.0.0`, verified remote primary tip at publication |
+| Intended tag | `v1.1.0`, verified remote primary tip at publication |
 
 Source alone does not establish release availability. The standalone installer preserves package identity and the
 production signing certificate for subsequent updates.

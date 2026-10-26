@@ -29,13 +29,13 @@
 - [Screenshots](#screenshots)
 - [License](#license)
 
-Version 1.1 is in development. Its code 7 flame-body and bezel polish passed
-native emulator controls, resume checks and independent moving review; final
-physical code 7 verification remains pending. Code 6 completed a five-minute physical performance foundation. The released 1.0.0 build has been checked on Google TV API 34 and a physical
-AFTDEC012E Fire TV at API 30. The modern scene combines recorded flame emission
-with an original steel burner and glass bed. See the [verification record](docs/VERIFICATION.md)
-for the exact artifact, device checks and remaining limits. The released 1.0.0 physical moving recording passed independent review.
-The signed release uses the exact artifact tested on that TV.
+Version 1.1 adds wood flame height above a fixed log bed, with softer flame
+emission and an updated bezel. The exact signed release passed native remote,
+update-preservation and normal idle-Dream checks on AFTDEC012E/API 30, plus
+Android TV API 34 checks. See the [verification record](docs/VERIFICATION.md)
+for measured presentation windows and device limits. The modern linear scene
+remains a recorded wood-flame composite over an original burner, not newly
+photographed gas footage.
 
 ## Features
 
@@ -138,15 +138,17 @@ the host coverage boundary. See [building](docs/BUILDING.md) and [verification](
 - [Device verification](docs/VERIFICATION.md)
 - [Release notes](CHANGELOG.md)
 - [Release procedure](docs/RELEASING.md)
+- [1.1.0 release details](docs/releases/v1.1.0.md)
 - [1.0.0 release details](docs/releases/v1.0.0.md)
 
 ## Screenshots
 
-Version 1.1 development captures from the running Android TV API 34 emulator.
-These code 7 captures do not establish physical performance. See the
-[full gallery and provenance](docs/SCREENSHOTS.md), including released 1.0.0 modes.
+Current version 1.1/code 7 captures from the physical AFTDEC012E/API 30 TV.
+The logs and fireplace walls remain fixed across the three wood flame heights.
+See the [full gallery and provenance](docs/SCREENSHOTS.md), including frame,
+linear-fire and normal DreamService captures.
 
-<table><tr><td><img src="art/screenshots/wood-height-small-api34.png" alt="Small wood flames above unchanged logs"></td><td><img src="art/screenshots/wood-height-medium-api34.png" alt="Original medium wood fire"></td><td><img src="art/screenshots/wood-height-large-api34.png" alt="Large wood flames above unchanged logs"></td></tr></table>
+<table><tr><td><img src="art/screenshots/physical7-wood-small.png" alt="Small wood flames above unchanged logs on physical Fire TV"></td><td><img src="art/screenshots/physical7-wood-medium.png" alt="Original medium wood fire on physical Fire TV"></td><td><img src="art/screenshots/physical7-wood-large.png" alt="Large wood flames above unchanged logs on physical Fire TV"></td></tr></table>
 
 ## License
 

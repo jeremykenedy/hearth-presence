@@ -1,6 +1,47 @@
 # Verification
 
-## Unreleased 1.1 wood height
+## Final 1.1.0/code 7 physical gate
+
+The exact production-signed APK is 121,223,466 bytes, SHA-256
+`9541eb4fe2f4d7d69ac1f85b38144f5b5926274291ebec796d8150d27e07b781`.
+Its certificate is `91128471b54e0c2cc28cb0400ebb5bd8e2b7f2509ba0b6d5ed0507f59752d5cf`.
+On October 26 it updated code 6 in place on AFTDEC012E/API 30 and retained all
+eleven stored settings. Actual remote D-pad input selected Small, Medium and
+Large wood heights; Preview and Back worked for each. Thin/wide white frames,
+frameless wood and Small/Natural versus Large/Blue/Slow linear presets were
+captured on the exact build. Home and reorder-to-front resumed the same Preview
+ActivityRecord; Back returned to Settings.
+
+Frameless Large wood with lively playback, bright lighting and lively ash
+measured 57.6915 to 58.1241 compositor presents per second across three clean
+Preview windows. The actual content SurfaceView provided 125 to 126 timestamps
+per rolling window; within-buffer maximum intervals were 33.15 to 33.42 ms.
+An eight-second moving recording was made separately, not during timing.
+
+With the existing 300000 ms idle timer unchanged, the selected Hearth service
+became bound after 302.365 seconds with `mCurrentDreamIsTest=false`. It remained
+bound for approximately 85 seconds, then detached with Back. Three rolling
+windows near each of 20, 40 and 70 seconds measured 47.9996 to 57.6751 compositor
+presents per second. These separated windows are not continuous run timing,
+decoded-video FPS or a thermal test. The wood source contains 30 fps; lively
+playback is 1.25x. Current native stills are in the [gallery](SCREENSHOTS.md).
+
+Strict cleanup matched all eleven Hearth settings, 51 live launcher portable
+values, 19 observed OS values, 28 readable surrounding provider interfaces,
+other installed APK hashes, external backup/import bytes and existence, app-op
+modes in both observed scopes, and guard/VPN/accessibility health. Unsupported
+provider responses were retained privately and do not establish value retention
+for those interfaces. Original Aerial selection was restored explicitly. Main
+was focused and Awake, and Hearth was stopped after final provider reads.
+No timer, permission, app-op, audio, CEC, account, reboot or sleep changes were used.
+
+The unchanged source period had already received independent normal-speed
+moving review through the 34.685-second API 34 capture. This does not represent
+owner-wide visual acceptance, frame-exact seam verification, audible crackle
+quality or long-duration thermal validation. Genuinely filmed modern linear gas
+remains unfinished; the shipped linear scene is the credited existing composite.
+
+## Earlier 1.1 development and rejected candidates
 
 The code 3 development candidate has SHA-256
 `6ae9a6f0779e80efb56d3fe09020adf8b47bf9615d6c50452dd352e8202cc77f`.
@@ -165,8 +206,8 @@ wood videos differ. DEX, settings, point-ash shaders, source medium video,
 traditional gas, modern linear, background, materials and audio are identical.
 Both new clips fully decode to 878 frames at 1920x1080/30. Large is byte-identical
 to the complete source proof reviewed in QuickTime. Local build, Java/style,
-installer, privacy, media integrity and artifact checks passed. The exact code 7 emulator gate is recorded below; physical presentation remains
-pending.
+installer, privacy, media integrity and artifact checks passed. The exact code 7 emulator gate is recorded below; its later final physical
+gate is summarized at the start of this document.
 
 ### Exact code 7 emulator gate
 

@@ -1,0 +1,74 @@
+{
+  "version": "1.1.0",
+  "versionCode": 7,
+  "apkSha256": "9541eb4fe2f4d7d69ac1f85b38144f5b5926274291ebec796d8150d27e07b781",
+  "device": "Amazon AFTDEC012E",
+  "api": 30,
+  "date": "2026-10-26",
+  "captures": [
+    {
+      "file": "art/screenshots/physical7-wood-small.png",
+      "sha256": "663c5f6a99998c75c44c852219f59410ce001a254b92a7b0d750fc8f1be4bad1",
+      "width": 1920,
+      "height": 1080,
+      "route": "PreviewActivity"
+    },
+    {
+      "file": "art/screenshots/physical7-wood-medium.png",
+      "sha256": "09a02c8cce73facc961a7ad3137341a0155c882b572ff0c8f2fe2be4e07423c9",
+      "width": 1920,
+      "height": 1080,
+      "route": "PreviewActivity"
+    },
+    {
+      "file": "art/screenshots/physical7-wood-large.png",
+      "sha256": "db8e739a682b636db28d15b7fbdacdd2189e1ae31365999e7a6528813311df35",
+      "width": 1920,
+      "height": 1080,
+      "route": "PreviewActivity"
+    },
+    {
+      "file": "art/screenshots/physical7-white-frame-thin.png",
+      "sha256": "b71f100aa5d1d87cc36b0e664e46d941ea0f4f31f859ffd6283f4f980d7a3828",
+      "width": 1920,
+      "height": 1080,
+      "route": "PreviewActivity"
+    },
+    {
+      "file": "art/screenshots/physical7-white-frame-wide.png",
+      "sha256": "3772986eb72017e78bb6a0396fa09e5ef5d41629bb23bffc2e3429c58cddec4c",
+      "width": 1920,
+      "height": 1080,
+      "route": "PreviewActivity"
+    },
+    {
+      "file": "art/screenshots/physical7-normal-dream-70.png",
+      "sha256": "02a82677ae1f58d3d4623f1a27208db9dab1dd6097d6a83f0e19244672cc4ecc",
+      "width": 1920,
+      "height": 1080,
+      "route": "normal non-test HearthDreamService"
+    },
+    {
+      "file": "art/screenshots/physical7-linear-small-natural.png",
+      "sha256": "cd3180ed18375f648d00e63b98b8ce0812fdb443cad8e36bf41a4e7a31925c2b",
+      "width": 1920,
+      "height": 1080,
+      "route": "PreviewActivity"
+    },
+    {
+      "file": "art/screenshots/physical7-linear-large-blue.png",
+      "sha256": "8f6db6037c71531adc810841a6e41f317fe465f4c092e69feae6386c2f1bf838",
+      "width": 1920,
+      "height": 1080,
+      "route": "PreviewActivity"
+    },
+    {
+      "file": "art/screenshots/physical7-settings-current7.png",
+      "sha256": "c55d4ac18daaaefdbf6bca29ee0ae82c3c4d6a860af0837f3d1bcab4ec67eee7",
+      "width": 1920,
+      "height": 1080,
+      "route": "SettingsActivity"
+    }
+  ],
+  "qualification": "Unretouched native captures. Performance windows separate from screenrecord. No owner-wide visual acceptance, acoustic or thermal claim."
+}

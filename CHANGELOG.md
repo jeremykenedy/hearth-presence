@@ -1,21 +1,23 @@
 # Changelog
 
-## 1.1.0 - Unreleased
+## 1.1.0 - 2026-10-26
 
-Wood fire now supports the existing small, medium and large flame-height choices
+Wood fire now uses the existing Small, Medium and Large flame-height choices
 without resizing the logs, firebox or surround. Medium retains the original
-recorded frames. The native height selector is enabled for wood and modern
-linear scenes; traditional gas remains excluded. All eleven preference keys and
-the production signing identity are preserved.
+recorded frames. The adapted Small and Large clips are bundled at 1080p/30;
+traditional gas height remains unsupported. Softer flame emission and a revised
+bezel preserve more of the recorded fire's orange body. Ash uses additive points
+instead of a full-screen effect pass.
 
-The modern linear scene still uses the previously credited wood-emission
-composite. A new photographed gas source has not passed the quality gate.
-Code 3 passed emulator controls and moving captures. Code 4 passed physical
-height selection and Dream attachment but failed the presentation-rate gate.
-The replacement pre-renders the two discrete 1080p/30 fps height variants and
-draws the same twelve ash particles as additive points. Code 6 passed native controls and a five-minute physical Dream performance
-foundation. Final bezel and flame-body polish still requires a fresh native
-quality gate; this is not a released update.
+The exact code 7 APK passed remote controls, in-place settings preservation and
+natural non-test Dream activation on AFTDEC012E/API 30, with separate clean
+compositor presentation samples. API 34 controls and independent moving review
+are also recorded. All eleven preference keys and the production signer are
+retained. See [release details](docs/releases/v1.1.0.md) for upgrade instructions,
+measured results and the remaining visual, sound and thermal limits.
+
+The modern linear scene remains the credited wood-emission composite, not newly
+photographed gas footage.
 
 ## 1.0.0 - 2026-10-16
 
