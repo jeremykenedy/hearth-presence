@@ -167,6 +167,32 @@ to the complete source proof reviewed in QuickTime. Local build, Java/style,
 installer, privacy, media integrity and artifact checks passed. Exact code 7
 Android visual and physical presentation gates remain pending.
 
+### Exact code 7 emulator gate
+
+The exact frozen code 7 APK was installed in place on the API 34 emulator and
+retained all eleven Hearth values. Actual D-pad selection exercised Small,
+Medium and Large with provider readback, Preview and Back. Current native
+captures show each size and the softened bezel. A 34.685-second frameless,
+large-height, lively-ash recording was saved; its length spans a source loop,
+but independent moving/boundary review is still pending. No DreamService or
+physical presentation claim is made from this Preview gate.
+
+Home and reorder-to-front resumed the same Preview ActivityRecord, and Back
+returned to the original Settings activity. Strict cleanup matched Hearth's
+eleven values, fourteen live UI values, fifteen observed system values,
+available surrounding providers, twenty-nine other package hashes, external
+backup/import bytes and existence, and both app-op scopes. Accessibility health,
+stopped guard, unlimited/zero-latency network and Google Home were verified.
+Hearth 7 and the retained Skycast 3 were force-stopped; the AVD remained alive.
+
+The AVD had been absent at preflight. Starting its existing userdata loaded a
+Quick Boot snapshot, so this is not a cold-boot claim. Before app mutation,
+read-only package, OS, weather, network, guard, accessibility, app-op and file
+comparisons matched the previous coordinated run. A fresh live UI export then
+matched that run's fourteen values as well. All new baselines were persisted
+on disk before the gate, and the temporary export app-op was immediately
+restored. The current source screenshots were inspected before inclusion.
+
 ## Final 1.0.0 artifact
 
 The production-signed APK is `hearth-presence.apk`, version 1.0.0/code 1, 69,011,424 bytes, SHA-256 `96067a79be86a0f29f034ee4bcc647e9da7195978b690a7d982f28a17b78278f`. Its production signing certificate SHA-256 is `91128471b54e0c2cc28cb0400ebb5bd8e2b7f2509ba0b6d5ed0507f59752d5cf`. CI review APKs use ephemeral signers and must not replace this update-compatible production artifact.

@@ -29,8 +29,9 @@
 - [Screenshots](#screenshots)
 - [License](#license)
 
-Version 1.1 is in development; its corrected code 6 wood-height and ash renderer
-has emulator evidence and awaits physical performance testing. The released 1.0.0 build has been checked on Google TV API 34 and a physical
+Version 1.1 is in development. Its code 7 flame-body and bezel polish passed
+native emulator controls and resume checks; final physical verification remains
+pending. Code 6 completed a five-minute physical performance foundation. The released 1.0.0 build has been checked on Google TV API 34 and a physical
 AFTDEC012E Fire TV at API 30. The modern scene combines recorded flame emission
 with an original steel burner and glass bed. See the [verification record](docs/VERIFICATION.md)
 for the exact artifact, device checks and remaining limits. The physical moving recording passed independent review.
