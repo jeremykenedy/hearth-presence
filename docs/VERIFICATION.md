@@ -245,13 +245,19 @@ The production-signed APK is `hearth-presence.apk`, version 1.0.0/code 1, 69,011
 
 ## Device matrix
 
-| Device | Type | OS/API | Observed output | Result |
-| --- | --- | --- | --- | --- |
-| Google TV emulator, shared 5580 | Emulator | Android 14/API 34 | 1920x1080 | Recorded wood/gas and modern linear playback, material/frame/height/color controls, provider, remote credits and bound test-Dream with Back checked |
-| Amazon AFTDEC012E | Physical Fire TV | Android API 30; Fire OS build not refreshed | 1920x1080 capture | Final signed APK update, remote Settings to Preview and Back, modern linear playback, frameless blue slow/small actual test-Dream and Back checked |
-| Other physical Android TV and Google TV models | Physical | Untested | Untested | Not established by these checks |
+| Device | Type | Version | OS/API | Observed output | Result |
+| --- | --- | --- | --- | --- | --- |
+| Google TV emulator, shared 5580 | Emulator | 1.1.0/code 7 | Android 14/API 34 | 1920x1080 | Remote wood heights, Large/lively-ash moving recording, Preview/Back and same-instance resume checked; independent 34.685-second movie review |
+| Amazon AFTDEC012E | Physical Fire TV | 1.1.0/code 7 | API 30 | 1920x1080 | In-place preservation, remote heights/frame contrasts/linear presets, natural non-test Dream after 302.365 seconds and about 85 seconds bound; separated compositor windows and strict cleanup |
+| Google TV emulator, shared 5580 | Emulator | 1.0.0/code 1 | Android 14/API 34 | 1920x1080 | Recorded wood/gas and modern linear playback, material/frame/height/color controls, provider, remote credits and bound test-Dream with Back checked |
+| Amazon AFTDEC012E | Physical Fire TV | 1.0.0/code 1 | API 30 | 1920x1080 capture | Remote Settings to Preview and Back, modern linear playback, frameless blue slow/small test-Dream and Back checked |
+| Other physical Android TV and Google TV models | Physical | Untested | Untested | Untested | Not established by these checks |
 
-## Final physical Fire TV run
+If you can test an unlisted model, report its model, OS/API, resolution, Preview,
+remote controls and normal idle-Dream results through the
+[issue tracker](https://github.com/jeremykenedy/hearth-presence/issues).
+
+## Released 1.0.0 physical Fire TV run
 
 On October 16, 2026, the exact final production APK was installed in place on AFTDEC012E. The ten existing stored preferences survived the update. The newly supported `flame_size` resolved to its `medium` default. Subsequent checks restored all eleven post-update values exactly.
 
@@ -263,7 +269,7 @@ The selected Aquarium Dream, screensaver enabled state, sleep timeout, screen-of
 
 The unretouched physical captures are [`fire-tv-modern-linear.png`](../art/screenshots/fire-tv-modern-linear.png) and [`fire-tv-frameless-blue-dream.png`](../art/screenshots/fire-tv-frameless-blue-dream.png). Their exact timestamps, artifact hash, routes and dimensions are in [`physical-provenance.json`](../art/screenshots/physical-provenance.json). Independent native QuickTime review played the final physical recording from start to end and replayed the middle through the end. Flames changed continuously within the correct slate frame and reflected lighting, with no empty or missing fire observed. The separate frameless blue actual-Dream capture was also inspected.
 
-## Emulator controls and moving evidence
+## Released 1.0.0 emulator controls and moving evidence
 
 The current modern scene uses isolated recorded wood flame emission over an original steel burner and glass bed. It replaces the rejected traditional-gas crop and is a composite depiction rather than a photographed gas burner or fluid simulation. Its 19-second source loop ran on Google TV API 34 at 1920x1080. Small, medium and large flame heights retain the same frame and burner bed. Frameless slow playback, a wide white frame, blue and violet grading and matching reflections were checked on the native surface.
 
