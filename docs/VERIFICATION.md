@@ -84,8 +84,25 @@ device-tested: full-resolution source-frame inspection caught displaced red
 brick illumination, so its media mask was corrected before the next candidate.
 Small, medium and large clips each fully decode to 878 frames at 1920x1080/30.
 The original medium file is unchanged. The new source stills are development
-media checks, not final native captures; native visual and presentation results
-are still required.
+media checks, not final native captures.
+
+On the Android TV API 34 emulator, exact code 6 retained all eleven existing
+Hearth values. Native D-pad selection and provider readback checked small,
+medium and large heights, with Preview and Back to Settings for each. An
+eight-second native recording checked lively ash with large wood flames. The
+updated gallery uses this exact APK. Independent moving review and physical
+presentation results remain pending.
+
+The existing Preview activity also resumed after Home, verified by the same
+ActivityRecord before and after returning, and Back returned to its original
+Settings activity. An earlier harness launched a second Preview rather than
+resuming the first; its failed Back assertion is retained as a harness failure,
+not a runtime regression or a passing route. No app change was needed for that
+correction. Cleanup verified Hearth's eleven values, fourteen launcher portable
+values, fifteen observed system values, exact external backup/import bytes,
+storage app-op modes and the stopped guard. Surrounding observed package hashes
+and available provider values matched. The emulator remained alive at Google
+Home, with the legitimate Hearth upgrade retained and force-stopped.
 
 Cleanup restored the eleven Hearth values, fifty-one current launcher portable
 values, fifteen observed system values, surrounding available providers,

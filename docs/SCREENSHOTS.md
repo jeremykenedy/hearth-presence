@@ -2,10 +2,11 @@
 
 ## Wood height development candidate
 
-These current captures come from version 1.1.0/code 3 on the Android TV API 34
+These current captures come from version 1.1.0/code 6 on the Android TV API 34
 emulator at 1920x1080. They are PreviewActivity captures, not physical-TV or
 DreamService proof. The fixed logs and frame retain their coordinates while the
-recorded flame emission changes height. Final physical testing is pending.
+recorded flame emission changes height through the pre-rendered variants.
+Code 6 physical presentation testing is pending.
 Exact artifact hashes are in [capture provenance](../art/screenshots/wood-height-provenance.json).
 
 <table><tr><th>Small</th><th>Medium</th><th>Large</th></tr><tr><td><img src="../art/screenshots/wood-height-small-api34.png" alt="Small wood flame emission above unchanged logs"></td><td><img src="../art/screenshots/wood-height-medium-api34.png" alt="Original medium wood footage with unchanged logs"></td><td><img src="../art/screenshots/wood-height-large-api34.png" alt="Large wood flame emission above unchanged logs"></td></tr><tr><td><img src="../art/screenshots/wood-height-settings-api34.png" alt="Native settings with wood flame height enabled"></td><td></td><td></td></tr></table>

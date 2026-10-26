@@ -29,8 +29,8 @@
 - [Screenshots](#screenshots)
 - [License](#license)
 
-Version 1.1 is in development; its new wood-height option has emulator evidence
-and awaits final physical testing. The released 1.0.0 build has been checked on Google TV API 34 and a physical
+Version 1.1 is in development; its corrected code 6 wood-height and ash renderer
+has emulator evidence and awaits physical performance testing. The released 1.0.0 build has been checked on Google TV API 34 and a physical
 AFTDEC012E Fire TV at API 30. The modern scene combines recorded flame emission
 with an original steel burner and glass bed. See the [verification record](docs/VERIFICATION.md)
 for the exact artifact, device checks and remaining limits. The physical moving recording passed independent review.
@@ -142,7 +142,7 @@ the host coverage boundary. See [building](docs/BUILDING.md) and [verification](
 ## Screenshots
 
 Version 1.1 development captures from the running Android TV API 34 emulator.
-Physical testing of the new wood-height option is pending. See the
+These code 6 captures do not establish physical performance. See the
 [full gallery and provenance](docs/SCREENSHOTS.md), including released 1.0.0 modes.
 
 <table><tr><td><img src="art/screenshots/wood-height-small-api34.png" alt="Small wood flames above unchanged logs"></td><td><img src="art/screenshots/wood-height-medium-api34.png" alt="Original medium wood fire"></td><td><img src="art/screenshots/wood-height-large-api34.png" alt="Large wood flames above unchanged logs"></td></tr></table>
