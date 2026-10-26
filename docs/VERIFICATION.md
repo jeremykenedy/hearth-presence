@@ -14,8 +14,8 @@ Small, medium and large wood Preview captures and an eight-second large-height
 movie were saved at 1920x1080. Back returned to settings. The first code 2 attempt
 also resized some changing wall illumination; it was rejected. Code 3 gates the
 resized emission to bright flame channels, preserving the fixed brickwork and
-log silhouette. Independent moving review and final physical Dream/presentation
-testing remain pending. No new Dream or FPS result is claimed here.
+log silhouette. Independent review of that corrected eight-second movie passed
+for proceeding to the physical gate. This does not establish final performance.
 
 All fourteen surrounding launcher portable keys, eleven system values, available
 surrounding-provider snapshots, external backup/import bytes, storage app-op
@@ -31,9 +31,42 @@ and its size is 69,920,808 bytes. The production certificate is unchanged.
 Compared with the native-tested code 3 APK, only `AndroidManifest.xml` and
 `assets/NOTICE` differ: DEX, media, backdrop, shader and all remaining resources
 are byte-identical. Signed build, Java/style checks, installer coverage, privacy
-and artifact checks pass. Exact code 4 native packaging smoke and physical
-verification are still pending.
+and artifact checks pass. The exact code 4 physical gate below failed its
+presentation-rate requirement, so this candidate must not be released.
 See [current candidate captures](SCREENSHOTS.md).
+
+### Code 4 physical performance failure
+
+On October 26, the exact code 4 APK was installed in place on the physical
+AFTDEC012E/API 30 device. All eleven stored Hearth values survived. Native D-pad
+selection exercised small, medium and large wood heights with Preview and Back;
+an eight-second large-height recording was saved for review. A normal, non-test
+Hearth Dream was actually bound and detached with Back.
+
+The worst tested preset was frameless wood, large flames, lively playback,
+bright lighting, lively ash, gentle motion and crackle off. Three short
+SurfaceFlinger latency windows from the actual Preview content SurfaceView
+measured 11.14449, 11.15453 and 11.14385 presents per second. Three windows from
+the actual Dream content SurfaceView measured 11.12751, 11.14427 and 11.14432.
+Sampling occurred without screen recording after 25 seconds of Preview
+settling and 40 seconds of Dream settling. These are presentation measurements,
+not source-video frame counts or a continuous thermal benchmark. The bundled
+wood source itself is 1920x1080 at 30 fps.
+
+This result fails the minimum 24 presents-per-second release gate. It does not
+identify whether the new height compositing, existing ash rendering or their
+combination dominates the cost. A controlled medium/large and ash-off/lively
+comparison remains necessary before choosing an optimization. No other preset
+inherits a performance result from this test.
+
+Cleanup restored the eleven Hearth values, fifty-one current launcher portable
+values, fifteen observed system values, surrounding available providers,
+external backup/import bytes and storage app-op modes. Other package identities
+were unchanged. The legitimate Hearth upgrade was retained. A final full
+window-manager dump verified Main focus, Awake state and no bound Dream; the
+original Aerial selection was restored. No reboot, power toggle, sleep command,
+audio or CEC changes were used. These physical results hold the release rather
+than extending the earlier 1.0 performance claim to the new renderer.
 
 The eight existing banner files are unchanged from the earlier public GitHub
 browser matrix recorded on October 16. That matrix checked desktop/mobile,
