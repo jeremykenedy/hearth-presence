@@ -10,8 +10,9 @@ the production signing identity are preserved.
 
 The modern linear scene still uses the previously credited wood-emission
 composite. A new photographed gas source has not passed the quality gate.
-Code 3 passed emulator controls and moving captures; final code 4 packaging and
-physical Dream/performance verification remain pending.
+Code 3 passed emulator controls and moving captures. Code 4's signed packaging
+and local checks pass; its exact native smoke and physical Dream/performance
+verification remain pending.
 
 ## 1.0.0 - 2026-10-16
 

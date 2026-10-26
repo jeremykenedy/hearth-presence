@@ -39,8 +39,12 @@ The eight existing banner files are unchanged from the earlier public GitHub
 browser matrix recorded on October 16. That matrix checked desktop/mobile,
 light/dark and motion/reduced-motion selections and observed changed animation
 phases; it did not record a full continuous loop or change account-wide theme
-preferences. The updated wood gallery still needs its own current public browser
-check before release.
+preferences. The updated wood gallery passed a public Chrome check at source
+`f8c411e` on October 26: all twenty-two 1920x1080 images loaded at desktop 1280px
+and phone 320px, both galleries were visually inspected, and all three columns
+fit without horizontal page overflow. The README's three new previews and
+features table also passed both widths. Temporary viewport changes were reset
+and the owned review tab was closed; no account appearance setting changed.
 
 ## Final 1.0.0 artifact
 
