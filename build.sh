@@ -9,7 +9,7 @@ OUT="$ROOT/build"
 KEYSTORE="${HEARTH_KEYSTORE:-$HOME/.android/hearth-presence.jks}"
 KEYPASS="${HEARTH_KEYPASS:-$HOME/.android/hearth-presence.pass}"
 VERSION_NAME="${VERSION_NAME:-1.1.0}"
-VERSION_CODE="${VERSION_CODE:-4}"
+VERSION_CODE="${VERSION_CODE:-6}"
 
 for tool in javac keytool openssl zip; do
   command -v "$tool" >/dev/null || { echo "Missing required tool: $tool" >&2; exit 1; }

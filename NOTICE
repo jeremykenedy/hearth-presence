@@ -11,7 +11,9 @@ Adapted by slight desaturation, H.264 transcoding and loop-boundary blending.
 The wood flame-height backdrop is a temporal minimum of this licensed footage.
 Its alpha channel records the fixed log silhouette. Only the separately sampled
 moving flame emission changes height; the recorded logs keep their geometry.
-The backdrop adaptation retains the same CC BY 3.0 attribution and license.
+Small and large wood videos bake that height adaptation at 1920x1080, 30 fps;
+medium uses the original bundled wood video. The backdrop and adapted videos
+retain the same CC BY 3.0 attribution and license.
 
 Bundled gas footage: Fireplace 1 2021-02-14.webm by FASTILY (2021), CC BY-SA 4.0.
 https://commons.wikimedia.org/wiki/File:Fireplace_1_2021-02-14.webm

@@ -3,16 +3,19 @@
 Wood flame height uses a licensed temporal-minimum backdrop with an encoded log
 silhouette. Medium samples the original video directly. For small and large,
 only bright moving emission above that silhouette is sampled at a different
-height; the logs, lower fire and wall texture keep their coordinates. The alpha
-data is uploaded without bitmap premultiplication. This is image compositing,
-not an independent combustion simulation.
+height; the logs, lower fire and wall texture keep their coordinates. The two
+height variants are baked into separate 1920x1080, 30 fps clips during development
+so the runtime does not repeat flame extraction for every display pixel. This is
+image compositing, not an independent combustion simulation.
 
 A native Android DreamService owns an OpenGL ES 2 surface. MediaPlayer decodes
 bundled H.264 wood or gas footage into an external OES texture. The fragment
 shader places that moving fire inside a layered metal reveal and a material
 surround spanning the screen. Photographed brick courses, joints, plaster grain,
 marble veins and timber grain are shaded with warm fluctuating spill light.
-A tiny optional drift moves the entire fireplace. No image slideshow is used.
+A tiny optional drift moves the entire fireplace. Twelve optional ash particles
+are drawn as small additive GL points, clipped to the firebox, rather than a
+full-screen fragment loop. No image slideshow is used.
 
 Dream stop and preview pause release video, sound and SurfaceTexture on the
 GL thread before pausing the surface. Starting creates fresh decoder and GL

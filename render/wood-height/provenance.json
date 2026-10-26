@@ -1,0 +1,35 @@
+{
+  "source": "res/raw/wood.mp4",
+  "sourceSha256": "0846651541a35df5d91c7c763536dd517bbdca22b5cac921e2bb04682152dfcb",
+  "background": "assets/wood-background.png",
+  "backgroundSha256": "993cc8931856b1c6358bc0e288d6187c7ed7c88801231c9e5a8eb2ded85d0172",
+  "license": "CC BY 3.0",
+  "attribution": "free video library (2018), Commons source and full terms in NOTICE",
+  "adaptation": "Temporal-minimum background sampled at4FPS plus fixed log silhouette; bright emission resampled above that silhouette, with soft transition; discrete pre-rendered height variants, not runtime combustion simulation",
+  "scales": {
+    "small": 0.65,
+    "medium": 1,
+    "large": 1.3
+  },
+  "medium": "Original bundled wood.mp4 unchanged",
+  "framesPerVariant": 878,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "variants": [
+    {
+      "file": "res/raw/wood_small.mp4",
+      "sha256": "e4382ad9e6c1754c8c5508fe75b0ba4451dbad8de8759d0f7f575556d6e82f06",
+      "bytes": 19267715
+    },
+    {
+      "file": "res/raw/wood_large.mp4",
+      "sha256": "89c880705ac96a42974370c37c204c5de6fc36c57cbbf271d362bf531d021bcb",
+      "bytes": 25895392
+    }
+  ],
+  "nativeVerification": "Pending code6; rejected code5 had displaced wall texture",
+  "chromaGate": "Green/red ratio smoothstep0.28\u20130.50 multiplied by green intensity smoothstep0.08\u20130.24 excludes displaced red brick reflections"
+}

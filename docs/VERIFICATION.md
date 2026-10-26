@@ -59,6 +59,34 @@ combination dominates the cost. A controlled medium/large and ash-off/lively
 comparison remains necessary before choosing an optimization. No other preset
 inherits a performance result from this test.
 
+A subsequent controlled comparison used the unchanged code 4 APK and the same
+frameless wood preset. Medium with ash off measured 51.322 to 51.369 presents per
+second; large with ash off measured 21.800 to 21.804; medium with lively ash
+measured 19.224 to 19.275. Each range comprises three short content-SurfaceView
+windows. The fourth combination was skipped to retain the cleanup reserve; the
+earlier separate large/lively result is not relabeled as part of this matrix.
+Both the height branch and the existing full-screen ash loop independently
+failed the release threshold. The first comparison attempt stopped before any
+measurements because Settings lost foreground. Activity logs recorded a delayed
+launcher Home start after the harness Home key; that attempt does not establish
+a provider defect. Fresh state was restored after both attempts.
+
+The replacement candidate pre-renders only the two discrete height variants at
+1080p/30 fps and draws the twelve ash particles as additive GL points. A chroma
+mask excludes red brick illumination from the resized flame emission. Native
+visual, shader, lifecycle and physical presentation gates remain pending for
+that replacement; the code 4 results cannot validate it.
+
+The corrected replacement is version 1.1.0/code 6, SHA-256
+`e4e87c718204f4afc27423ae1bcba4b7ef821302a67985c2e8815e67f1ca458e`,
+115,087,658 bytes, with the unchanged production certificate. Code 5 was not
+device-tested: full-resolution source-frame inspection caught displaced red
+brick illumination, so its media mask was corrected before the next candidate.
+Small, medium and large clips each fully decode to 878 frames at 1920x1080/30.
+The original medium file is unchanged. The new source stills are development
+media checks, not final native captures; native visual and presentation results
+are still required.
+
 Cleanup restored the eleven Hearth values, fifty-one current launcher portable
 values, fifteen observed system values, surrounding available providers,
 external backup/import bytes and storage app-op modes. Other package identities

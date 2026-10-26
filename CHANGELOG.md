@@ -10,9 +10,11 @@ the production signing identity are preserved.
 
 The modern linear scene still uses the previously credited wood-emission
 composite. A new photographed gas source has not passed the quality gate.
-Code 3 passed emulator controls and moving captures. Code 4's signed packaging
-and local checks pass; its exact native smoke and physical Dream/performance
-verification remain pending.
+Code 3 passed emulator controls and moving captures. Code 4 passed physical
+height selection and Dream attachment but failed the presentation-rate gate.
+The replacement pre-renders the two discrete 1080p/30 fps height variants and
+draws the same twelve ash particles as additive points. Its native and physical
+quality and performance gates remain pending; this is not a released update.
 
 ## 1.0.0 - 2026-10-16
 

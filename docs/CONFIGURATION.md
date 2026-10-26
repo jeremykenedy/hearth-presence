@@ -29,7 +29,9 @@ Wood flame height separates the recorded moving emission from a temporal-minimum
 backdrop. The log silhouette, surrounding brickwork and lower fire keep their
 original coordinates. Medium uses the original video unchanged. Small and large
 resize only the emission above that fixed silhouette, with a soft transition.
-This is flame presentation compositing, not a physical fuel or combustion model.
+These two variants are pre-rendered at 1920x1080/30 fps; choosing a height selects
+the corresponding clip. This is flame presentation compositing, not real-time
+extraction or a physical fuel or combustion model.
 The modern linear gas flame-height control changes only the region above the
 fixed burner line. Its stone/glass bed and frame keep their original dimensions.
 It is flame presentation scaling, not a physical gas-valve simulation.
