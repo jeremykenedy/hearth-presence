@@ -154,7 +154,8 @@ the fixed sidewalls. Matched source frames and a complete 29.267-second source
 movie were reviewed, plus a ten-second last-to-first content boundary proof.
 Natural detached bright flame flecks remain. These source checks do not replace
 fresh Android visual, lifecycle and presentation checks of the final candidate.
-The code 6 screenshots remain explicitly tied to code 6, not the new polish.
+Historical code 6 screenshots remain tied to that candidate; the current gallery
+uses code 7 captures of the new polish.
 
 The frozen code 7 candidate has SHA-256
 `9541eb4fe2f4d7d69ac1f85b38144f5b5926274291ebec796d8150d27e07b781`
@@ -164,8 +165,8 @@ wood videos differ. DEX, settings, point-ash shaders, source medium video,
 traditional gas, modern linear, background, materials and audio are identical.
 Both new clips fully decode to 878 frames at 1920x1080/30. Large is byte-identical
 to the complete source proof reviewed in QuickTime. Local build, Java/style,
-installer, privacy, media integrity and artifact checks passed. Exact code 7
-Android visual and physical presentation gates remain pending.
+installer, privacy, media integrity and artifact checks passed. The exact code 7 emulator gate is recorded below; physical presentation remains
+pending.
 
 ### Exact code 7 emulator gate
 
@@ -174,8 +175,12 @@ retained all eleven Hearth values. Actual D-pad selection exercised Small,
 Medium and Large with provider readback, Preview and Back. Current native
 captures show each size and the softened bezel. A 34.685-second frameless,
 large-height, lively-ash recording was saved; its length spans a source loop,
-but independent moving/boundary review is still pending. No DreamService or
-physical presentation claim is made from this Preview gate.
+and was independently played at normal speed through its end. Samples near
+0.24, 13.69, 29.00 and 34.68 seconds showed moving fire and ash, stable log and
+wall coordinates, and no obvious bright rectangular bezel ring or gross chroma
+halo. This was sampled moving review across the 29.267-second source period,
+not frame-by-frame seam verification or owner acceptance. No DreamService or
+physical code 7 presentation claim is made from this Preview gate.
 
 Home and reorder-to-front resumed the same Preview ActivityRecord, and Back
 returned to the original Settings activity. Strict cleanup matched Hearth's
