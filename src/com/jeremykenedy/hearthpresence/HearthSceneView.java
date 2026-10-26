@@ -28,6 +28,10 @@ public final class HearthSceneView extends GLSurfaceView implements GLSurfaceVie
       ByteBuffer.allocateDirect(32).order(ByteOrder.nativeOrder()).asFloatBuffer();
   private final float[] matrix = new float[16];
   private final float[] ashParticles = new float[36];
+  private final FloatBuffer ashVertices =
+      ByteBuffer.allocateDirect(144).order(ByteOrder.nativeOrder()).asFloatBuffer();
+  private final HashMap<String, Integer> ashUniforms = new HashMap<>();
+  private int ashProgram, ashPosition;
   private final HashMap<String, Integer> uniforms = new HashMap<>();
   private int position;
   private volatile boolean active;
@@ -79,8 +83,8 @@ public final class HearthSceneView extends GLSurfaceView implements GLSurfaceVie
     }
   }
 
-  private String readShader() {
-    try (java.io.InputStream input = getContext().getAssets().open("hearth.frag")) {
+  private String readShader(String filename) {
+    try (java.io.InputStream input = getContext().getAssets().open(filename)) {
       java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();
       byte[] bytes = new byte[4096];
       int count;
@@ -108,7 +112,7 @@ public final class HearthSceneView extends GLSurfaceView implements GLSurfaceVie
         shader(
             GLES20.GL_VERTEX_SHADER,
             "attribute vec2 position; varying vec2 uv; void main(){uv=position*.5+.5;gl_Position=vec4(position,0.,1.);}");
-    int fragment = shader(GLES20.GL_FRAGMENT_SHADER, readShader());
+    int fragment = shader(GLES20.GL_FRAGMENT_SHADER, readShader("hearth.frag"));
     program = GLES20.glCreateProgram();
     GLES20.glAttachShader(program, vertex);
     GLES20.glAttachShader(program, fragment);
@@ -129,14 +133,12 @@ public final class HearthSceneView extends GLSurfaceView implements GLSurfaceVie
           "opening",
           "hue",
           "light",
-          "ash",
           "gas",
           "drift",
           "frameless",
           "linear",
           "frameThickness",
-          "flameScale",
-          "ashParticles[0]"
+          "flameScale"
         }) {
       uniforms.put(name, GLES20.glGetUniformLocation(program, name));
     }
@@ -170,7 +172,7 @@ public final class HearthSceneView extends GLSurfaceView implements GLSurfaceVie
             .openRawResourceFd(
                 "linear".equals(settings.get("fuel"))
                     ? R.raw.linear
-                    : "gas".equals(settings.get("fuel")) ? R.raw.gas : R.raw.wood)) {
+                    : "gas".equals(settings.get("fuel")) ? R.raw.gas : woodResource())) {
       player.setDataSource(asset.getFileDescriptor(), asset.getStartOffset(), asset.getLength());
       player.setSurface(surface);
       player.setLooping(true);
@@ -197,7 +199,62 @@ public final class HearthSceneView extends GLSurfaceView implements GLSurfaceVie
               .setPitch(1f));
       if (active) sound.start();
     }
+    createAshProgram();
     started = System.nanoTime();
+  }
+
+  private int woodResource() {
+    if ("small".equals(settings.get("flame_size"))) return R.raw.wood_small;
+    if ("large".equals(settings.get("flame_size"))) return R.raw.wood_large;
+    return R.raw.wood;
+  }
+
+  private void createAshProgram() {
+    int vertex = shader(GLES20.GL_VERTEX_SHADER, readShader("ash.vert"));
+    int fragment = shader(GLES20.GL_FRAGMENT_SHADER, readShader("ash.frag"));
+    ashProgram = GLES20.glCreateProgram();
+    GLES20.glAttachShader(ashProgram, vertex);
+    GLES20.glAttachShader(ashProgram, fragment);
+    GLES20.glLinkProgram(ashProgram);
+    int[] ok = new int[1];
+    GLES20.glGetProgramiv(ashProgram, GLES20.GL_LINK_STATUS, ok, 0);
+    if (ok[0] == 0) throw new IllegalStateException(GLES20.glGetProgramInfoLog(ashProgram));
+    GLES20.glDeleteShader(vertex);
+    GLES20.glDeleteShader(fragment);
+    ashPosition = GLES20.glGetAttribLocation(ashProgram, "spark");
+    ashUniforms.clear();
+    for (String name :
+        new String[] {
+          "resolution", "time", "drift", "opening", "gas", "linear", "frameless", "ash"
+        }) {
+      ashUniforms.put(name, GLES20.glGetUniformLocation(ashProgram, name));
+    }
+  }
+
+  private void drawAsh(float elapsed) {
+    float intensity = choice("ash", "off", "subtle", "lively") * .5f;
+    if (intensity == 0) return;
+    GLES20.glUseProgram(ashProgram);
+    GLES20.glUniform2f(ashUniforms.get("resolution"), width, height);
+    GLES20.glUniform1f(ashUniforms.get("time"), elapsed);
+    GLES20.glUniform1f(ashUniforms.get("drift"), "off".equals(settings.get("motion")) ? 0 : 1);
+    GLES20.glUniform1f(
+        ashUniforms.get("opening"),
+        1.14f - choice("frame_width", "thin", "standard", "wide") * .18f);
+    GLES20.glUniform1f(ashUniforms.get("gas"), "gas".equals(settings.get("fuel")) ? 1 : 0);
+    GLES20.glUniform1f(ashUniforms.get("linear"), "linear".equals(settings.get("fuel")) ? 1 : 0);
+    GLES20.glUniform1f(
+        ashUniforms.get("frameless"), "frameless".equals(settings.get("surround")) ? 1 : 0);
+    GLES20.glUniform1f(ashUniforms.get("ash"), intensity);
+    ashVertices.clear();
+    ashVertices.put(ashParticles).position(0);
+    GLES20.glEnableVertexAttribArray(ashPosition);
+    GLES20.glVertexAttribPointer(ashPosition, 3, GLES20.GL_FLOAT, false, 0, ashVertices);
+    GLES20.glEnable(GLES20.GL_BLEND);
+    GLES20.glBlendFunc(GLES20.GL_ONE, GLES20.GL_ONE);
+    GLES20.glDrawArrays(GLES20.GL_POINTS, 0, 12);
+    GLES20.glDisable(GLES20.GL_BLEND);
+    GLES20.glDisableVertexAttribArray(ashPosition);
   }
 
   private void loadTexture(int textureId, String filename) {
@@ -264,7 +321,6 @@ public final class HearthSceneView extends GLSurfaceView implements GLSurfaceVie
       ashParticles[i * 3 + 1] = phase * 1.45f - .7f;
       ashParticles[i * 3 + 2] = 1f - phase;
     }
-    GLES20.glUniform3fv(uniforms.get("ashParticles[0]"), 12, ashParticles, 0);
     uniform("material", choice("surround", "brick", "white", "classic", "slate", "marble"));
     float frame = choice("frame_width", "thin", "standard", "wide");
     uniform("opening", 1.14f - frame * .18f);
@@ -274,11 +330,12 @@ public final class HearthSceneView extends GLSurfaceView implements GLSurfaceVie
     uniform("linear", "linear".equals(settings.get("fuel")) ? 1 : 0);
     uniform("hue", choice("color", "natural", "amber", "blue", "violet"));
     uniform("light", .25f + choice("brightness", "night", "warm", "bright") * .35f);
-    uniform("ash", choice("ash", "off", "subtle", "lively") * .5f);
     uniform("gas", "gas".equals(settings.get("fuel")) ? 1 : 0);
     uniform("drift", "off".equals(settings.get("motion")) ? 0 : 1);
     GLES20.glEnableVertexAttribArray(position);
     GLES20.glVertexAttribPointer(position, 2, GLES20.GL_FLOAT, false, 0, vertices);
     GLES20.glDrawArrays(GLES20.GL_TRIANGLE_STRIP, 0, 4);
+    GLES20.glDisableVertexAttribArray(position);
+    drawAsh(elapsed);
   }
 }

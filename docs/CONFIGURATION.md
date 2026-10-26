@@ -8,7 +8,7 @@ Settings persist locally. Restart the preview or dream to apply changes.
 |---|---|---|
 | Surround | Brick | Brick, white plaster, classic timber, slate, marble, frameless, random |
 | Fire type | Wood | Real wood fire, traditional gas footage, modern linear burner composite, random |
-| Linear gas flame height | Medium | Small (0.65x), medium (1x), large (1.3x), random; enabled for modern linear gas |
+| Flame height | Medium | Small (0.65x), medium (1x), large (1.3x), random; enabled for wood and modern linear gas |
 | Frame width | Standard | Thin, standard, wide, random |
 | Burn speed | Natural | Slow (0.75x), natural (1x), lively (1.25x), random |
 | Flame color | Natural | Natural, amber, blue, violet, random |
@@ -24,7 +24,14 @@ The video retains its aspect ratio. Frameless removes the entire surround and
 fills the screen with moving fire; frame width does not apply in that mode.
 Burn speed uses Android PlaybackParams. Crackle playback follows the same speed
 with pitch fixed at 1.0, avoiding a higher or lower tone. It does not simulate fuel
-flow or independently resize individual flames in recorded wood or traditional gas footage.
+flow. Traditional gas footage does not support independent flame resizing.
+Wood flame height separates the recorded moving emission from a temporal-minimum
+backdrop. The log silhouette, surrounding brickwork and lower fire keep their
+original coordinates. Medium uses the original video unchanged. Small and large
+resize only the emission above that fixed silhouette, with a soft transition.
+These two variants are pre-rendered at 1920x1080/30 fps; choosing a height selects
+the corresponding clip. This is flame presentation compositing, not real-time
+extraction or a physical fuel or combustion model.
 The modern linear gas flame-height control changes only the region above the
 fixed burner line. Its stone/glass bed and frame keep their original dimensions.
 It is flame presentation scaling, not a physical gas-valve simulation.

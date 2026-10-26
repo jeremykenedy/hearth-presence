@@ -10,14 +10,12 @@ uniform float material;
 uniform float opening;
 uniform float hue;
 uniform float light;
-uniform float ash;
 uniform float drift;
 uniform float gas;
 uniform float linear;
 uniform float frameless;
 uniform float frameThickness;
 uniform float flameScale;
-uniform vec3 ashParticles[12];
 varying vec2 uv;
 float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
 float noise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(hash(i),hash(i+vec2(1,0)),f.x),mix(hash(i+vec2(0,1)),hash(i+1.),f.x),f.y);}
@@ -57,13 +55,7 @@ void main(){
    color*=mix(.68,1.1,light);
    // The reveal casts a soft shadow into the firebox.
    if(frameless<.5)color*=smoothstep(0.,.045,-edge);
-   if(ash>0.)for(int i=0;i<12;i++){
-     vec3 spark=ashParticles[i];
-     vec2 distanceToAsh=(p-spark.xy)*vec2(1.,.7);
-     float a=max(0.,1.-dot(distanceToAsh,distanceToAsh)*90000.);
-     a=a*a*ash*spark.z;
-     color+=vec3(.8,.34,.08)*a;
-   }
+
  }else{
    vec2 surfaceUv=p*.5;
    if(material>1.5 && material<2.5)surfaceUv=(abs(p.x)>box.x+.1 && abs(p.y)<box.y+.2)?p*.55:p.yx*.55;
@@ -99,8 +91,7 @@ void main(){
    // Layered firebox reveal, a brushed metal lip and shadowed stone bevel.
    if(linear>.5)inner*=1.8;
    if(inner<.027)stone=vec3(.035,.032,.028)+.07*exp(-abs(inner-.014)*190.);
-   else if(inner<.075)stone*=.43+.47*(inner-.027)/.048;
-   else if(inner<.09)stone*=1.16;
+   else if(inner<.09)stone*=.43+.57*smoothstep(.027,.09,inner);
    float room=.33+light*.6;
    float spill=exp(-length(max(q,vec2(0.)))*3.3)*.30*flicker;
    color=stone*room+stone*fireGlow*spill*(.6+.4*max(0.,dot(normal,toFire)));

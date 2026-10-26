@@ -68,7 +68,7 @@ public final class SettingsActivity extends Activity {
       spinner.setFocusable(true);
       if ("flame_size".equals(row[0])) {
         flameHeight = spinner;
-        spinner.setEnabled("linear".equals(prefs.getString("fuel", "wood")));
+        spinner.setEnabled(!"gas".equals(prefs.getString("fuel", "wood")));
       }
       ArrayAdapter<String> adapter =
           new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, labels(values));
@@ -82,7 +82,7 @@ public final class SettingsActivity extends Activity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
               prefs.edit().putString(row[0], values[position]).apply();
               if ("fuel".equals(row[0]) && flameHeight != null)
-                flameHeight.setEnabled("linear".equals(values[position]));
+                flameHeight.setEnabled(!"gas".equals(values[position]));
             }
 
             public void onNothingSelected(AdapterView<?> parent) {}

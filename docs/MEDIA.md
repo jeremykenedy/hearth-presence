@@ -27,6 +27,30 @@ are in assets/materials/provenance.json. License: https://polyhaven.com/license
 
 No Pexels or Pixabay media is bundled.
 
+## Wood flame-height backdrop
+
+`assets/wood-background.png` derives from the same credited CC BY 3.0 wood video.
+The RGB channels contain a temporal-minimum backdrop sampled at four frames per
+second. Alpha stores the hand-traced log silhouette for each image column; it is
+data rather than transparency. The development renderer keeps this backdrop and
+the lower recorded fire fixed, resampling only bright moving emission above the
+silhouette. It bakes the small and large variants into `res/raw/wood_small.mp4`
+and `res/raw/wood_large.mp4` at 1920x1080/30 fps. Medium selects the original
+`wood.mp4` unchanged; Android does not run this extraction algorithm.
+
+Rebuild this derivative with the existing development rendering dependencies:
+
+```sh
+build/render-venv/bin/python render/wood-height/create_background.py
+build/render-venv/bin/python render/wood-height/create_variants.py
+```
+
+The scripts use FFmpeg, NumPy, Pillow and OpenCV during development. Android gains no
+runtime dependency or download. The derivative retains the wood source's CC BY
+3.0 license. New gas-source experiments remain outside the application: no
+clipped, mesh-filtered or ceramic-log-ghost composite replaces the released
+modern linear asset.
+
 ## Modern linear scene
 
 The wide burner scene combines actual moving flame emission with an original

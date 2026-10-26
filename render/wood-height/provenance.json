@@ -1,0 +1,36 @@
+{
+  "source": "res/raw/wood.mp4",
+  "sourceSha256": "0846651541a35df5d91c7c763536dd517bbdca22b5cac921e2bb04682152dfcb",
+  "background": "assets/wood-background.png",
+  "backgroundSha256": "993cc8931856b1c6358bc0e288d6187c7ed7c88801231c9e5a8eb2ded85d0172",
+  "license": "CC BY 3.0",
+  "attribution": "free video library (2018), Commons source and full terms in NOTICE",
+  "adaptation": "Temporal-minimum background sampled at 4 fps plus fixed log silhouette; soft orange flame emission resampled above that silhouette with lateral sidewall protection; discrete pre-rendered height variants, not runtime combustion simulation",
+  "scales": {
+    "small": 0.65,
+    "medium": 1,
+    "large": 1.3
+  },
+  "medium": "Original bundled wood.mp4 unchanged",
+  "framesPerVariant": 878,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "variants": [
+    {
+      "file": "res/raw/wood_small.mp4",
+      "sha256": "dcfc109b6e66c15614c321e5cdf7242c11a84c5fcc44dca44d244e9360a301ce",
+      "bytes": 21842711
+    },
+    {
+      "file": "res/raw/wood_large.mp4",
+      "sha256": "2ec2828fe07b9486ecfebb34401f2b30989ccc819a8598dc239ce68970131d90",
+      "bytes": 29456356
+    }
+  ],
+  "nativeVerification": "Code 6 performance foundation passed; code 7 softer matte and bezel polish pending fresh native verification",
+  "chromaGate": "Green/red ratio smoothstep 0.15 to 0.38 multiplied by green intensity smoothstep 0.025 to 0.18 preserves dim orange connecting flame tissue",
+  "sidewallProtection": "Source-specific horizontal fade rises from 0.12 to 0.20 and falls from 0.80 to 0.90 of source width; pixels outside the central flame volume retain their recorded positions"
+}
