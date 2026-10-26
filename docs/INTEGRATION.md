@@ -39,6 +39,8 @@ Back/Menu/Home, restoration and actual fire output must be verified on the host.
 
 The settings provider accepts only documented `key` and `value` pairs. Its
 schema includes defaults, choices and whether random is accepted. Modern gas
-flame height changes only the flame region above its fixed burner bed. It does
-not resize flames independently in recorded wood or traditional gas footage.
+flame height changes only the flame region above its fixed burner bed. Version
+1.1 also applies the same stored `flame_size` choices to recorded wood emission,
+keeping the logs fixed. Traditional gas height remains unsupported. The provider
+retains the same eleven keys and choices; no preference migration is required.
 See [configuration](CONFIGURATION.md) and [device verification](VERIFICATION.md).

@@ -36,7 +36,7 @@ public final class HearthSceneView extends GLSurfaceView implements GLSurfaceVie
   private MediaPlayer player;
   private MediaPlayer sound;
   private int program, texture, width, height;
-  private final int[] materialTextures = new int[2];
+  private final int[] materialTextures = new int[3];
   private long started;
 
   public HearthSceneView(Context context) {
@@ -122,6 +122,7 @@ public final class HearthSceneView extends GLSurfaceView implements GLSurfaceVie
           "fire",
           "diffuseMap",
           "normalMap",
+          "woodBackground",
           "videoMatrix",
           "resolution",
           "time",
@@ -151,11 +152,12 @@ public final class HearthSceneView extends GLSurfaceView implements GLSurfaceVie
         GLES11Ext.GL_TEXTURE_EXTERNAL_OES, GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_LINEAR);
     GLES20.glTexParameteri(
         GLES11Ext.GL_TEXTURE_EXTERNAL_OES, GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_LINEAR);
-    GLES20.glGenTextures(2, materialTextures, 0);
+    GLES20.glGenTextures(3, materialTextures, 0);
     String material =
         "frameless".equals(settings.get("surround")) ? "brick" : settings.get("surround");
     loadTexture(materialTextures[0], "materials/" + material + "_diff.jpg");
     loadTexture(materialTextures[1], "materials/" + material + "_normal.jpg");
+    loadTexture(materialTextures[2], "wood-background.png");
     video = new SurfaceTexture(texture);
     video.setOnFrameAvailableListener(
         surface -> {
@@ -202,7 +204,9 @@ public final class HearthSceneView extends GLSurfaceView implements GLSurfaceVie
 
   private void loadTexture(int textureId, String filename) {
     try (java.io.InputStream stream = getContext().getAssets().open(filename)) {
-      Bitmap bitmap = BitmapFactory.decodeStream(stream);
+      BitmapFactory.Options options = new BitmapFactory.Options();
+      options.inPremultiplied = false;
+      Bitmap bitmap = BitmapFactory.decodeStream(stream, null, options);
       GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, textureId);
       GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_LINEAR);
       GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_LINEAR);
@@ -245,10 +249,11 @@ public final class HearthSceneView extends GLSurfaceView implements GLSurfaceVie
       }
     }
     GLES20.glUseProgram(program);
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 3; i++) {
       GLES20.glActiveTexture(GLES20.GL_TEXTURE1 + i);
       GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, materialTextures[i]);
-      GLES20.glUniform1i(uniforms.get(i == 0 ? "diffuseMap" : "normalMap"), i + 1);
+      GLES20.glUniform1i(
+          uniforms.get(i == 0 ? "diffuseMap" : i == 1 ? "normalMap" : "woodBackground"), i + 1);
     }
 
     GLES20.glActiveTexture(GLES20.GL_TEXTURE0);

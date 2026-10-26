@@ -17,10 +17,10 @@
 
 ## Table of Contents
 
+- [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Quick Start](#quick-start)
-- [Features](#features)
 - [Configuration](#configuration)
 - [Fire TV Toolkit](#fire-tv-toolkit)
 - [Privacy](#privacy)
@@ -29,11 +29,24 @@
 - [Screenshots](#screenshots)
 - [License](#license)
 
-The 1.0.0 production build has been checked on Google TV API 34 and a physical
+Version 1.1 is in development; its new wood-height option has emulator evidence
+and awaits final physical testing. The released 1.0.0 build has been checked on Google TV API 34 and a physical
 AFTDEC012E Fire TV at API 30. The modern scene combines recorded flame emission
 with an original steel burner and glass bed. See the [verification record](docs/VERIFICATION.md)
 for the exact artifact, device checks and remaining limits. The physical moving recording passed independent review.
 The signed release uses the exact artifact tested on that TV.
+
+## Features
+
+| Feature | Details |
+| --- | --- |
+| Real moving fire | Offline wood and traditional gas footage, plus a wide burner composite. [Media](docs/MEDIA.md) |
+| Fireplace styles | Brick, plaster, timber, slate, marble and frameless, with three frame widths. [Options](docs/CONFIGURATION.md) |
+| Flame height | Wood and modern linear heights change above a fixed log or burner bed. [Options](docs/CONFIGURATION.md) |
+| Flame effects | Playback speed, color, room light, ash, optional crackle and slow drift. [Options](docs/CONFIGURATION.md) |
+| TV integration | Native DreamService, remote settings and eleven retained provider keys. [Contract](docs/INTEGRATION.md) |
+| Offline privacy | No ads, analytics, tracking or app network access. [Architecture](docs/ARCHITECTURE.md) |
+
 
 ## Requirements
 
@@ -59,31 +72,18 @@ Open **Hearth Presence** from the TV launcher, choose your surround and fire,
 then select **Open fireplace** to preview. Back exits. Select Hearth Presence
 in the platform screensaver settings or through Fire TV Toolkit for idle use.
 
-## Features
-
-- Moving wood and traditional gas footage, plus a modern wide burner composite, bundled for offline playback.
-- Brick, white plaster, classic timber, modern slate and marble surrounds, plus full-bleed Frameless.
-- Grain, joints, layered metal reveals and warm flickering light on the surround.
-- Natural, amber, blue and violet flame grading.
-- Thin/standard/wide frames, small/medium/large modern flame height, adjustable burn speed, room lighting, ash and crackle sound.
-- Slow camera drift and random choices for supported settings.
-- Native DreamService with a remote-friendly settings screen and host settings provider.
 
 Show some love by starring this repository on GitHub.
 
 ## Configuration
 
-The default is a wood fire in brick with a standard frame, natural flame color and warm
+The default is wood in brick with a standard frame, natural color and warm
 lighting. Ash is subtle, sound is off and protective drift is on.
-[Configuration](docs/CONFIGURATION.md) lists every choice and the host contract.
-Frame width changes the material band and metal reveal. Frameless removes both.
-Burn speed offers 0.75x, 1x and 1.25x playback with pitch preserved. Linear gas
-uses a 32:9 composite of isolated recorded flame emission over an original burner.
-Its flame-height control scales the flame region above the fixed bed; recorded wood
-and traditional gas do not offer independent flame resizing. Color grades the recorded
-flame. Ash is a separate visual effect; crackle is synthesized. Traditional gas footage
-includes a real safety mesh. The modern composite uses credited wood-combustion
-emission and contains no photographed logs or mesh. See [media provenance](docs/MEDIA.md).
+[Configuration](docs/CONFIGURATION.md) lists every option and limitation.
+Version 1.1 adds independent wood emission height while keeping the logs fixed;
+medium shows the original video unchanged. Traditional gas height remains
+unsupported. The modern linear scene remains the credited wood-emission
+composite, not newly photographed gas footage.
 
 ## Fire TV Toolkit
 
@@ -133,6 +133,7 @@ the host coverage boundary. See [building](docs/BUILDING.md) and [verification](
 - [Host integration contract](docs/INTEGRATION.md)
 - [Architecture and privacy](docs/ARCHITECTURE.md)
 - [Media provenance and licenses](docs/MEDIA.md)
+- [Native screenshot gallery](docs/SCREENSHOTS.md)
 - [Device verification](docs/VERIFICATION.md)
 - [Release notes](CHANGELOG.md)
 - [Release procedure](docs/RELEASING.md)
@@ -140,9 +141,11 @@ the host coverage boundary. See [building](docs/BUILDING.md) and [verification](
 
 ## Screenshots
 
-Captured from the running native application. The first two images show the exact final production APK on a physical AFTDEC012E Fire TV; the third shows its unchanged modern scene through the actual DreamService on API 34. Remaining captures show the verified emulator controls and materials. Footage attribution is in [NOTICE](NOTICE).
+Version 1.1 development captures from the running Android TV API 34 emulator.
+Physical testing of the new wood-height option is pending. See the
+[full gallery and provenance](docs/SCREENSHOTS.md), including released 1.0.0 modes.
 
-<table><tr><td><img src="art/screenshots/fire-tv-modern-linear.png" alt="Final modern linear fireplace on physical AFTDEC012E Fire TV"></td><td><img src="art/screenshots/fire-tv-frameless-blue-dream.png" alt="Final frameless blue small flames through the bound DreamService on physical Fire TV"></td><td><img src="art/screenshots/dream-modern-linear.png" alt="Modern linear scene through actual DreamService on API 34 emulator"></td></tr><tr><td><img src="art/screenshots/brick-wood.png" alt="Recorded wood fire in a brick surround"></td><td><img src="art/screenshots/modern-linear-medium.png" alt="Modern wide burner with recorded flame emission and a slate surround"></td><td><img src="art/screenshots/settings-modern-linear.png" alt="Remote settings with modern linear flame height enabled"></td></tr><tr><td><img src="art/screenshots/white-wood.png" alt="Wood fire with a light plaster surround"></td><td><img src="art/screenshots/classic-wood.png" alt="Classic timber fireplace with molding and columns"></td><td><img src="art/screenshots/marble-wood.png" alt="Wood fire in a veined marble surround"></td></tr><tr><td><img src="art/screenshots/modern-linear-small.png" alt="Small modern flames above the unchanged burner bed"></td><td><img src="art/screenshots/modern-linear-large.png" alt="Large modern flames above the unchanged burner bed"></td><td><img src="art/screenshots/modern-linear-frameless-slow.png" alt="Modern fire filling the display without a surround"></td></tr><tr><td><img src="art/screenshots/modern-linear-white-wide-blue.png" alt="Blue flame grading retaining bright cores and translucent edges"></td><td><img src="art/screenshots/modern-linear-white-violet.png" alt="Violet flame grading with matching surround reflections"></td><td><img src="art/screenshots/settings-effects.png" alt="Burn speed, color, ash, sound and drift controls"></td></tr><tr><td><img src="art/screenshots/credits.png" alt="Bundled source credits opened with the TV remote"></td><td><img src="art/screenshots/credits-scrolled.png" alt="Full offline application license scrolled with the remote"></td><td><img src="art/screenshots/frameless-wood.png" alt="Recorded wood fire filling the screen without a surround"></td></tr></table>
+<table><tr><td><img src="art/screenshots/wood-height-small-api34.png" alt="Small wood flames above unchanged logs"></td><td><img src="art/screenshots/wood-height-medium-api34.png" alt="Original medium wood fire"></td><td><img src="art/screenshots/wood-height-large-api34.png" alt="Large wood flames above unchanged logs"></td></tr></table>
 
 ## License
 

@@ -1,5 +1,12 @@
 # Architecture
 
+Wood flame height uses a licensed temporal-minimum backdrop with an encoded log
+silhouette. Medium samples the original video directly. For small and large,
+only bright moving emission above that silhouette is sampled at a different
+height; the logs, lower fire and wall texture keep their coordinates. The alpha
+data is uploaded without bitmap premultiplication. This is image compositing,
+not an independent combustion simulation.
+
 A native Android DreamService owns an OpenGL ES 2 surface. MediaPlayer decodes
 bundled H.264 wood or gas footage into an external OES texture. The fragment
 shader places that moving fire inside a layered metal reveal and a material

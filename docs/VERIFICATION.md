@@ -1,5 +1,47 @@
 # Verification
 
+## Unreleased 1.1 wood height
+
+The code 3 development candidate has SHA-256
+`6ae9a6f0779e80efb56d3fe09020adf8b47bf9615d6c50452dd352e8202cc77f`.
+It was installed in place with the production signer on the Android TV API 34
+emulator. All eleven prior Hearth provider values survived and were restored
+after the test. The native height selector was enabled for wood; selecting Small
+and reading the provider confirmed persistence. This was a tap-assisted emulator
+selection, not a physical remote-input claim.
+
+Small, medium and large wood Preview captures and an eight-second large-height
+movie were saved at 1920x1080. Back returned to settings. The first code 2 attempt
+also resized some changing wall illumination; it was rejected. Code 3 gates the
+resized emission to bright flame channels, preserving the fixed brickwork and
+log silhouette. Independent moving review and final physical Dream/presentation
+testing remain pending. No new Dream or FPS result is claimed here.
+
+All fourteen surrounding launcher portable keys, eleven system values, available
+surrounding-provider snapshots, external backup/import bytes, storage app-op
+mode and stopped guard state matched the fresh on-disk baseline after cleanup.
+The existing emulator remained running at Home. No physical TV, timer, reboot,
+audio, account or selected-Dream changes were part of this test.
+
+The development background asset was regenerated from the bundled source and
+matched the tested APK byte-for-byte. Settings tests and actual Java style checks
+passed. The final code 4 adds the derivative notice and release version metadata.
+Its SHA-256 is `581782d2752866e6dcc6ffcaba1cbaf9273a009f0225d5ccd041936df034a909`
+and its size is 69,920,808 bytes. The production certificate is unchanged.
+Compared with the native-tested code 3 APK, only `AndroidManifest.xml` and
+`assets/NOTICE` differ: DEX, media, backdrop, shader and all remaining resources
+are byte-identical. Signed build, Java/style checks, installer coverage, privacy
+and artifact checks pass. Exact code 4 native packaging smoke and physical
+verification are still pending.
+See [current candidate captures](SCREENSHOTS.md).
+
+The eight existing banner files are unchanged from the earlier public GitHub
+browser matrix recorded on October 16. That matrix checked desktop/mobile,
+light/dark and motion/reduced-motion selections and observed changed animation
+phases; it did not record a full continuous loop or change account-wide theme
+preferences. The updated wood gallery still needs its own current public browser
+check before release.
+
 ## Final 1.0.0 artifact
 
 The production-signed APK is `hearth-presence.apk`, version 1.0.0/code 1, 69,011,424 bytes, SHA-256 `96067a79be86a0f29f034ee4bcc647e9da7195978b690a7d982f28a17b78278f`. Its production signing certificate SHA-256 is `91128471b54e0c2cc28cb0400ebb5bd8e2b7f2509ba0b6d5ed0507f59752d5cf`. CI review APKs use ephemeral signers and must not replace this update-compatible production artifact.

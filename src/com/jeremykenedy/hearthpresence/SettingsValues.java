@@ -17,7 +17,7 @@ public final class SettingsValues {
       "random"
     },
     {"fuel", "Fire type", "wood", "wood", "gas", "linear", "random"},
-    {"flame_size", "Linear gas flame height", "medium", "small", "medium", "large", "random"},
+    {"flame_size", "Flame height", "medium", "small", "medium", "large", "random"},
     {"frame_width", "Frame width", "standard", "thin", "standard", "wide", "random"},
     {"burn_speed", "Burn speed", "natural", "slow", "natural", "lively", "random"},
     {"color", "Flame color", "natural", "natural", "amber", "blue", "violet", "random"},

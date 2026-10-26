@@ -3,6 +3,7 @@ precision highp float;
 uniform samplerExternalOES fire;
 uniform sampler2D diffuseMap;
 uniform sampler2D normalMap;
+uniform sampler2D woodBackground;
 uniform mat4 videoMatrix;
 uniform vec2 resolution;
 uniform float time;
@@ -49,6 +50,19 @@ void main(){
    if(linear>.5 && f.y>.205)f.y=.205+(f.y-.205)/flameScale;
    vec4 coord=videoMatrix*vec4(f.x,f.y,0,1);
    color=f.y>1.?vec3(0.):texture2D(fire,coord.xy).rgb;
+   if(linear<.5 && gas<.5 && abs(flameScale-1.)>.01){
+     vec4 background=texture2D(woodBackground,vec2(f.x,1.-f.y));
+     float anchor=1.-background.a;
+     vec2 flameUv=vec2(f.x,anchor+(f.y-anchor)/flameScale);
+     vec4 flameCoord=videoMatrix*vec4(flameUv,0.,1.);
+     vec3 recorded=flameUv.y>1.?vec3(0.):texture2D(fire,flameCoord.xy).rgb;
+     vec3 originalBackground=texture2D(woodBackground,vec2(flameUv.x,1.-flameUv.y)).rgb;
+     vec3 emission=max(pow(recorded,vec3(2.2))-pow(originalBackground,vec3(2.2)),vec3(0.));
+     emission*=smoothstep(.08,.24,recorded.g);
+     vec3 adjusted=pow(clamp(pow(background.rgb,vec3(2.2))+emission,0.,1.),vec3(1./2.2));
+     // Only recorded emission above the fixed log silhouette changes height.
+     color=mix(color,adjusted,clamp((f.y-anchor)/.033333,0.,1.));
+   }
    // Remap recorded color channels so bright cores and soft edges retain detail.
    float warm=smoothstep(.015,.12,color.r-color.b);
    if(hue>.5 && hue<1.5)color=mix(color,color*vec3(1.06,.88,.7),warm);

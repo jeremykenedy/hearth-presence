@@ -8,6 +8,10 @@ Creative Commons Attribution 3.0 Unported (CC BY 3.0).
 https://commons.wikimedia.org/wiki/File:Fantastic-fireplace-fire-chimney-hearth-_background_-_texture_-_motion_graphics_-_free_video_library.webm
 https://creativecommons.org/licenses/by/3.0/
 Adapted by slight desaturation, H.264 transcoding and loop-boundary blending.
+The wood flame-height backdrop is a temporal minimum of this licensed footage.
+Its alpha channel records the fixed log silhouette. Only the separately sampled
+moving flame emission changes height; the recorded logs keep their geometry.
+The backdrop adaptation retains the same CC BY 3.0 attribution and license.
 
 Bundled gas footage: Fireplace 1 2021-02-14.webm by FASTILY (2021), CC BY-SA 4.0.
 https://commons.wikimedia.org/wiki/File:Fireplace_1_2021-02-14.webm

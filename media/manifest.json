@@ -18,5 +18,10 @@
     "file": "res/raw/wood.mp4",
     "sha256": "0846651541a35df5d91c7c763536dd517bbdca22b5cac921e2bb04682152dfcb",
     "bytes": 21862491
+  },
+  {
+    "file": "assets/wood-background.png",
+    "sha256": "993cc8931856b1c6358bc0e288d6187c7ed7c88801231c9e5a8eb2ded85d0172",
+    "bytes": 910445
   }
 ]

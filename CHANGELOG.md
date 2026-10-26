@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.1.0 - Unreleased
+
+Wood fire now supports the existing small, medium and large flame-height choices
+without resizing the logs, firebox or surround. Medium retains the original
+recorded frames. The native height selector is enabled for wood and modern
+linear scenes; traditional gas remains excluded. All eleven preference keys and
+the production signing identity are preserved.
+
+The modern linear scene still uses the previously credited wood-emission
+composite. A new photographed gas source has not passed the quality gate.
+Code 3 passed emulator controls and moving captures; final code 4 packaging and
+physical Dream/performance verification remain pending.
+
 ## 1.0.0 - 2026-10-16
 
 Initial public release: offline recorded wood and traditional gas, plus a modern wide burner composite with moving recorded flame emission. Five photographed surrounds, frame width and frameless mode, linear-only flame height, burn speed, color, lighting, ash, optional synthesized crackle and slow drift are configurable from the remote.
